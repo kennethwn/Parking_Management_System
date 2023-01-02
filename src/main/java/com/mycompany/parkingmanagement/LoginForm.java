@@ -3,11 +3,26 @@ package com.mycompany.parkingmanagement;
 import com.mycompany.parkingmanagement.logic.Database;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+interface cta {
+  void changeColor(JPanel hover, Color rand);
+  void changeColor(JLabel label, Color rand);
+}
 
 public class LoginForm extends javax.swing.JFrame {
   public LoginForm() {
     initComponents();
     setLocationRelativeTo(null);
+  }
+  
+  private void changeColor(JPanel hover, Color rand) {
+    hover.setBackground(rand);
+  }
+  
+  private void changeColor(JLabel label, Color rand) {
+    label.setBackground(rand);
   }
 
   @SuppressWarnings("unchecked")
@@ -22,11 +37,12 @@ public class LoginForm extends javax.swing.JFrame {
     jLabel1 = new javax.swing.JLabel();
     Username = new javax.swing.JTextField();
     Password = new javax.swing.JPasswordField();
-    jPanel3 = new javax.swing.JPanel();
+    Signin_button = new javax.swing.JPanel();
     cta = new javax.swing.JLabel();
-    cta_exit = new javax.swing.JLabel();
     username_reminder = new javax.swing.JLabel();
     password_reminder = new javax.swing.JLabel();
+    cta_exit_panel = new javax.swing.JPanel();
+    cta_exit = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setUndecorated(true);
@@ -116,14 +132,23 @@ public class LoginForm extends javax.swing.JFrame {
     });
     jPanel2.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 280, 40));
 
-    jPanel3.setBackground(new java.awt.Color(75, 86, 210));
-    jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+    Signin_button.setBackground(new java.awt.Color(75, 86, 210));
+    Signin_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    Signin_button.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        jPanel3MouseClicked(evt);
+        Signin_buttonMouseClicked(evt);
       }
       public void mouseEntered(java.awt.event.MouseEvent evt) {
-        jPanel3MouseEntered(evt);
+        Signin_buttonMouseEntered(evt);
+      }
+      public void mouseExited(java.awt.event.MouseEvent evt) {
+        Signin_buttonMouseExited(evt);
+      }
+      public void mousePressed(java.awt.event.MouseEvent evt) {
+        Signin_buttonMousePressed(evt);
+      }
+      public void mouseReleased(java.awt.event.MouseEvent evt) {
+        Signin_buttonMouseReleased(evt);
       }
     });
 
@@ -134,22 +159,41 @@ public class LoginForm extends javax.swing.JFrame {
     cta.setText("SIGN IN");
     cta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-    jPanel3.setLayout(jPanel3Layout);
-    jPanel3Layout.setHorizontalGroup(
-      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    javax.swing.GroupLayout Signin_buttonLayout = new javax.swing.GroupLayout(Signin_button);
+    Signin_button.setLayout(Signin_buttonLayout);
+    Signin_buttonLayout.setHorizontalGroup(
+      Signin_buttonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
     );
-    jPanel3Layout.setVerticalGroup(
-      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    Signin_buttonLayout.setVerticalGroup(
+      Signin_buttonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
     );
 
-    jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 280, 40));
+    jPanel2.add(Signin_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 280, 40));
+
+    username_reminder.setForeground(new java.awt.Color(255, 0, 0));
+    jPanel2.add(username_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 280, -1));
+
+    password_reminder.setForeground(new java.awt.Color(255, 0, 0));
+    jPanel2.add(password_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 280, -1));
+
+    cta_exit_panel.setBackground(new java.awt.Color(255, 255, 255));
+    cta_exit_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        cta_exit_panelMouseClicked(evt);
+      }
+      public void mouseEntered(java.awt.event.MouseEvent evt) {
+        cta_exit_panelMouseEntered(evt);
+      }
+      public void mouseExited(java.awt.event.MouseEvent evt) {
+        cta_exit_panelMouseExited(evt);
+      }
+    });
 
     cta_exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     cta_exit.setForeground(new java.awt.Color(0, 0, 0));
-    cta_exit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    cta_exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     cta_exit.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\asset\\Vector.png")); // NOI18N
     cta_exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     cta_exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,13 +204,21 @@ public class LoginForm extends javax.swing.JFrame {
         cta_exitMouseEntered(evt);
       }
     });
-    jPanel2.add(cta_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 30, 30));
 
-    username_reminder.setForeground(new java.awt.Color(255, 0, 0));
-    jPanel2.add(username_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 280, -1));
+    javax.swing.GroupLayout cta_exit_panelLayout = new javax.swing.GroupLayout(cta_exit_panel);
+    cta_exit_panel.setLayout(cta_exit_panelLayout);
+    cta_exit_panelLayout.setHorizontalGroup(
+      cta_exit_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_exit, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    );
+    cta_exit_panelLayout.setVerticalGroup(
+      cta_exit_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cta_exit_panelLayout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
+        .addComponent(cta_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
-    password_reminder.setForeground(new java.awt.Color(255, 0, 0));
-    jPanel2.add(password_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 280, -1));
+    jPanel2.add(cta_exit_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 40, 30));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -203,14 +255,14 @@ public class LoginForm extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_exitMouseClicked
 
   private void cta_exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exitMouseEntered
-    cta_exit.setBackground(new Color(255,0,0));
+    changeColor(cta_exit, new Color(255,255,255));
   }//GEN-LAST:event_cta_exitMouseEntered
 
-  private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
-    setBackground(new Color(71, 33, 131));
-  }//GEN-LAST:event_jPanel3MouseEntered
+  private void Signin_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseEntered
+    changeColor(Signin_button, new Color(71, 33, 131));
+  }//GEN-LAST:event_Signin_buttonMouseEntered
 
-  private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+  private void Signin_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseClicked
     String _username = Username.getText();
     String _password = Password.getText();
     
@@ -237,7 +289,31 @@ public class LoginForm extends javax.swing.JFrame {
     else {
       JOptionPane.showMessageDialog(this, "Username or password wrong..");
     }
-  }//GEN-LAST:event_jPanel3MouseClicked
+  }//GEN-LAST:event_Signin_buttonMouseClicked
+
+  private void Signin_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseExited
+    changeColor(Signin_button, new Color(75, 86, 210));
+  }//GEN-LAST:event_Signin_buttonMouseExited
+
+  private void Signin_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMousePressed
+    changeColor(Signin_button, new Color(75, 86, 210));
+  }//GEN-LAST:event_Signin_buttonMousePressed
+
+  private void Signin_buttonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseReleased
+    changeColor(Signin_button, new Color(71, 33, 131));
+  }//GEN-LAST:event_Signin_buttonMouseReleased
+
+  private void cta_exit_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseClicked
+    System.exit(0);
+  }//GEN-LAST:event_cta_exit_panelMouseClicked
+
+  private void cta_exit_panelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseEntered
+    changeColor(cta_exit_panel, new Color(255,0,0));
+  }//GEN-LAST:event_cta_exit_panelMouseEntered
+
+  private void cta_exit_panelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseExited
+    changeColor(cta_exit_panel, new Color(255,255,255));
+  }//GEN-LAST:event_cta_exit_panelMouseExited
 
   public static void main(String args[]) {
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -272,16 +348,17 @@ public class LoginForm extends javax.swing.JFrame {
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JPasswordField Password;
+  private javax.swing.JPanel Signin_button;
   private javax.swing.JTextField Username;
   private javax.swing.JLabel cta;
   private javax.swing.JLabel cta_exit;
+  private javax.swing.JPanel cta_exit_panel;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
   private javax.swing.JLabel jLabel5;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
-  private javax.swing.JPanel jPanel3;
   private javax.swing.JLabel password_reminder;
   private javax.swing.JLabel username_reminder;
   // End of variables declaration//GEN-END:variables
