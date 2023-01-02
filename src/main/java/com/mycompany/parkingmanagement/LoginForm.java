@@ -35,7 +35,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     jLabel3.setBackground(new java.awt.Color(255, 255, 255));
     jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\ParkingSystem\\asset\\rsz_1rsz_parking-logo.png")); // NOI18N
+    jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\asset\\rsz_1rsz_parking-logo.png")); // NOI18N
 
     jLabel4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
     jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,7 +150,7 @@ public class LoginForm extends javax.swing.JFrame {
     cta_exit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
     cta_exit.setForeground(new java.awt.Color(0, 0, 0));
     cta_exit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    cta_exit.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\ParkingSystem\\asset\\Vector.png")); // NOI18N
+    cta_exit.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\asset\\Vector.png")); // NOI18N
     cta_exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     cta_exit.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
