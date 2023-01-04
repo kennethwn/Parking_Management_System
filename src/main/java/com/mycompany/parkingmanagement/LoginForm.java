@@ -6,11 +6,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 
-interface cta {
-  void changeColor(JPanel hover, Color rand);
-  void changeColor(JLabel label, Color rand);
-}
-
 public class LoginForm extends javax.swing.JFrame {
   public LoginForm() {
     initComponents();
@@ -255,11 +250,11 @@ public class LoginForm extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_exitMouseClicked
 
   private void cta_exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exitMouseEntered
-    new CtaButton().changeColor(cta_exit, Color.red);
+    new StyleGuide().changeColor(cta_exit, Color.red);
   }//GEN-LAST:event_cta_exitMouseEntered
 
   private void Signin_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseEntered
-    new CtaButton().changeColor(Signin_button, new Color(71, 33, 131));
+    new StyleGuide().changeColor(Signin_button, new Color(71, 33, 131));
   }//GEN-LAST:event_Signin_buttonMouseEntered
 
   private void Signin_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseClicked
@@ -292,15 +287,15 @@ public class LoginForm extends javax.swing.JFrame {
   }//GEN-LAST:event_Signin_buttonMouseClicked
 
   private void Signin_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseExited
-    new CtaButton().changeColor(Signin_button, new Color(75,86,210));
+    new StyleGuide().changeColor(Signin_button, new Color(75,86,210));
   }//GEN-LAST:event_Signin_buttonMouseExited
 
   private void Signin_buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMousePressed
-    new CtaButton().changeColor(Signin_button, new Color(75,86,210));
+    new StyleGuide().changeColor(Signin_button, new Color(75,86,210));
   }//GEN-LAST:event_Signin_buttonMousePressed
 
   private void Signin_buttonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Signin_buttonMouseReleased
-    new CtaButton().changeColor(Signin_button, new Color(71, 33, 131));
+    new StyleGuide().changeColor(Signin_button, new Color(71, 33, 131));
   }//GEN-LAST:event_Signin_buttonMouseReleased
 
   private void cta_exit_panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseClicked
@@ -308,11 +303,11 @@ public class LoginForm extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_exit_panelMouseClicked
 
   private void cta_exit_panelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseEntered
-    new CtaButton().changeColor(cta_exit_panel, Color.red);
+    new StyleGuide().changeColor(cta_exit_panel, Color.red);
   }//GEN-LAST:event_cta_exit_panelMouseEntered
 
   private void cta_exit_panelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_exit_panelMouseExited
-    new CtaButton().changeColor(cta_exit_panel, new Color(255,255,255));
+    new StyleGuide().changeColor(cta_exit_panel, new Color(255,255,255));
   }//GEN-LAST:event_cta_exit_panelMouseExited
 
   public static void main(String args[]) {
