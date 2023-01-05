@@ -13,6 +13,7 @@ public class MainView extends javax.swing.JFrame {
   /** Creates new form MainView */
   public MainView() {
     initComponents();
+    setTitle("Parking Management System");
     setLocationRelativeTo(null);
     setExtendedState(JFrame.MAXIMIZED_BOTH); 
   }
@@ -321,6 +322,7 @@ public class MainView extends javax.swing.JFrame {
     nopol_input.setForeground(new java.awt.Color(149, 149, 149));
     nopol_input.setHorizontalAlignment(javax.swing.JTextField.CENTER);
     nopol_input.setText("x xxxx xx");
+    nopol_input.setBorder(javax.swing.BorderFactory.createEtchedBorder());
     nopol_input.addFocusListener(new java.awt.event.FocusAdapter() {
       public void focusGained(java.awt.event.FocusEvent evt) {
         nopol_inputFocusGained(evt);
@@ -365,6 +367,7 @@ public class MainView extends javax.swing.JFrame {
       }
     });
 
+    nonmember_radio.setBackground(new java.awt.Color(255, 255, 255));
     nonmember_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     nonmember_radio.setForeground(new java.awt.Color(0, 0, 0));
     nonmember_radio.setText("Nonmember");
@@ -400,18 +403,22 @@ public class MainView extends javax.swing.JFrame {
     tipe_title.setForeground(new java.awt.Color(0, 0, 0));
     tipe_title.setText("Tipe :");
 
+    mobil_radio.setBackground(new java.awt.Color(255, 255, 255));
     mobil_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     mobil_radio.setForeground(new java.awt.Color(0, 0, 0));
     mobil_radio.setText("Mobil");
 
+    motor_radio.setBackground(new java.awt.Color(255, 255, 255));
     motor_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     motor_radio.setForeground(new java.awt.Color(0, 0, 0));
     motor_radio.setText("Motor");
 
+    truk_radio.setBackground(new java.awt.Color(255, 255, 255));
     truk_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     truk_radio.setForeground(new java.awt.Color(0, 0, 0));
     truk_radio.setText("Truk");
 
+    bus_radio.setBackground(new java.awt.Color(255, 255, 255));
     bus_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     bus_radio.setForeground(new java.awt.Color(0, 0, 0));
     bus_radio.setText("Bus");
