@@ -62,6 +62,24 @@ public class MainView extends javax.swing.JFrame {
     pic_1 = new javax.swing.JPanel();
     pic_2 = new javax.swing.JPanel();
     daftar_kendaraan_panel = new javax.swing.JPanel();
+    table_panel = new javax.swing.JPanel();
+    table_title_panel = new javax.swing.JPanel();
+    daftar_kendaraan_title = new javax.swing.JLabel();
+    total_title = new javax.swing.JLabel();
+    num_jumlah_kendaraan = new javax.swing.JLabel();
+    jScrollPane2 = new javax.swing.JScrollPane();
+    jTable1 = new javax.swing.JTable();
+    mobil_panel = new javax.swing.JPanel();
+    mobil_title_panel = new javax.swing.JPanel();
+    mobil_title = new javax.swing.JLabel();
+    total_mobil_parkir = new javax.swing.JLabel();
+    motor_panel = new javax.swing.JPanel();
+    motor_title_panel = new javax.swing.JPanel();
+    motor_title = new javax.swing.JLabel();
+    total_motor_parkir = new javax.swing.JLabel();
+    others_panel = new javax.swing.JPanel();
+    others_title_panel = new javax.swing.JPanel();
+    others_title = new javax.swing.JLabel();
     jLabel1 = new javax.swing.JLabel();
     history_panel = new javax.swing.JPanel();
     jLabel2 = new javax.swing.JLabel();
@@ -585,21 +603,225 @@ public class MainView extends javax.swing.JFrame {
 
     daftar_kendaraan_panel.setBackground(new java.awt.Color(255, 255, 255));
 
-    jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+    table_title_panel.setBackground(new java.awt.Color(75, 86, 210));
+
+    daftar_kendaraan_title.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+    daftar_kendaraan_title.setForeground(new java.awt.Color(255, 255, 255));
+    daftar_kendaraan_title.setText("Daftar Kendaraan");
+
+    total_title.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+    total_title.setForeground(new java.awt.Color(255, 255, 255));
+    total_title.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+    total_title.setText("Total : ");
+
+    num_jumlah_kendaraan.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    num_jumlah_kendaraan.setForeground(new java.awt.Color(255, 0, 0));
+    num_jumlah_kendaraan.setText("30");
+
+    javax.swing.GroupLayout table_title_panelLayout = new javax.swing.GroupLayout(table_title_panel);
+    table_title_panel.setLayout(table_title_panelLayout);
+    table_title_panelLayout.setHorizontalGroup(
+      table_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(table_title_panelLayout.createSequentialGroup()
+        .addGap(15, 15, 15)
+        .addComponent(daftar_kendaraan_title)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(total_title, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(num_jumlah_kendaraan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0))
+    );
+    table_title_panelLayout.setVerticalGroup(
+      table_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(daftar_kendaraan_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+      .addComponent(num_jumlah_kendaraan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(total_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null},
+        {null, null, null, null}
+      },
+      new String [] {
+        "No Polisi", "Tipe", "Merk", "Jam Masuk"
+      }
+    ) {
+      Class[] types = new Class [] {
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+      };
+
+      public Class getColumnClass(int columnIndex) {
+        return types [columnIndex];
+      }
+    });
+    jTable1.getTableHeader().setReorderingAllowed(false);
+    jScrollPane2.setViewportView(jTable1);
+
+    javax.swing.GroupLayout table_panelLayout = new javax.swing.GroupLayout(table_panel);
+    table_panel.setLayout(table_panelLayout);
+    table_panelLayout.setHorizontalGroup(
+      table_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(table_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jScrollPane2)
+    );
+    table_panelLayout.setVerticalGroup(
+      table_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(table_panelLayout.createSequentialGroup()
+        .addComponent(table_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+
+    mobil_panel.setBackground(new java.awt.Color(255, 255, 255));
+    mobil_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    mobil_title_panel.setBackground(new java.awt.Color(75, 86, 210));
+
+    mobil_title.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    mobil_title.setForeground(new java.awt.Color(255, 255, 255));
+    mobil_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    mobil_title.setText("MOBIL");
+
+    javax.swing.GroupLayout mobil_title_panelLayout = new javax.swing.GroupLayout(mobil_title_panel);
+    mobil_title_panel.setLayout(mobil_title_panelLayout);
+    mobil_title_panelLayout.setHorizontalGroup(
+      mobil_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_title, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+    );
+    mobil_title_panelLayout.setVerticalGroup(
+      mobil_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+    );
+
+    total_mobil_parkir.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    total_mobil_parkir.setForeground(new java.awt.Color(0, 0, 0));
+    total_mobil_parkir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout mobil_panelLayout = new javax.swing.GroupLayout(mobil_panel);
+    mobil_panel.setLayout(mobil_panelLayout);
+    mobil_panelLayout.setHorizontalGroup(
+      mobil_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(total_mobil_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    mobil_panelLayout.setVerticalGroup(
+      mobil_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(mobil_panelLayout.createSequentialGroup()
+        .addComponent(mobil_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(total_mobil_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    motor_panel.setBackground(new java.awt.Color(255, 255, 255));
+    motor_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    motor_title_panel.setBackground(new java.awt.Color(75, 86, 210));
+
+    motor_title.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    motor_title.setForeground(new java.awt.Color(255, 255, 255));
+    motor_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    motor_title.setText("MOTOR");
+
+    javax.swing.GroupLayout motor_title_panelLayout = new javax.swing.GroupLayout(motor_title_panel);
+    motor_title_panel.setLayout(motor_title_panelLayout);
+    motor_title_panelLayout.setHorizontalGroup(
+      motor_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_title, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+    );
+    motor_title_panelLayout.setVerticalGroup(
+      motor_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+    );
+
+    total_motor_parkir.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    total_motor_parkir.setForeground(new java.awt.Color(0, 0, 0));
+    total_motor_parkir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout motor_panelLayout = new javax.swing.GroupLayout(motor_panel);
+    motor_panel.setLayout(motor_panelLayout);
+    motor_panelLayout.setHorizontalGroup(
+      motor_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(total_motor_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    motor_panelLayout.setVerticalGroup(
+      motor_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(motor_panelLayout.createSequentialGroup()
+        .addComponent(motor_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(total_motor_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    others_panel.setBackground(new java.awt.Color(255, 255, 255));
+    others_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    others_title_panel.setBackground(new java.awt.Color(75, 86, 210));
+
+    others_title.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    others_title.setForeground(new java.awt.Color(255, 255, 255));
+    others_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    others_title.setText("LAINNYA");
+
+    javax.swing.GroupLayout others_title_panelLayout = new javax.swing.GroupLayout(others_title_panel);
+    others_title_panel.setLayout(others_title_panelLayout);
+    others_title_panelLayout.setHorizontalGroup(
+      others_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(others_title, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+    );
+    others_title_panelLayout.setVerticalGroup(
+      others_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(others_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+    );
+
+    jLabel1.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
     jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel1.setText("Daftar Kendaraan");
+
+    javax.swing.GroupLayout others_panelLayout = new javax.swing.GroupLayout(others_panel);
+    others_panel.setLayout(others_panelLayout);
+    others_panelLayout.setHorizontalGroup(
+      others_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(others_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    others_panelLayout.setVerticalGroup(
+      others_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(others_panelLayout.createSequentialGroup()
+        .addComponent(others_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+    );
 
     javax.swing.GroupLayout daftar_kendaraan_panelLayout = new javax.swing.GroupLayout(daftar_kendaraan_panel);
     daftar_kendaraan_panel.setLayout(daftar_kendaraan_panelLayout);
     daftar_kendaraan_panelLayout.setHorizontalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
+        .addContainerGap(31, Short.MAX_VALUE)
+        .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addComponent(table_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addGroup(javax.swing.GroupLayout.Alignment.LEADING, daftar_kendaraan_panelLayout.createSequentialGroup()
+            .addComponent(mobil_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(motor_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(others_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addGap(60, 60, 60))
     );
     daftar_kendaraan_panelLayout.setVerticalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(daftar_kendaraan_panelLayout.createSequentialGroup()
-        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 582, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
+        .addContainerGap(38, Short.MAX_VALUE)
+        .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(mobil_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(motor_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(others_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(33, 33, 33)
+        .addComponent(table_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(69, 69, 69))
     );
 
     feature_panel.add(daftar_kendaraan_panel, "card3");
@@ -1244,15 +1466,18 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel cta_validate;
   private javax.swing.JLabel daftar_kendaraan;
   private javax.swing.JPanel daftar_kendaraan_panel;
+  private javax.swing.JLabel daftar_kendaraan_title;
   private javax.swing.JPanel feature_panel;
   private javax.swing.JPanel history_panel;
   private javax.swing.JLabel home_icon;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JScrollPane jScrollPane1;
+  private javax.swing.JScrollPane jScrollPane2;
   private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
+  private javax.swing.JTable jTable1;
   private javax.swing.JLabel jumlah_kosong;
   private javax.swing.JLabel jumlah_kosong2;
   private javax.swing.JLabel jumlah_terisi;
@@ -1267,12 +1492,22 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel list_icon;
   private javax.swing.JPanel main_panel;
   private javax.swing.JRadioButton member_radio;
+  private javax.swing.JPanel mobil_panel;
   private javax.swing.JRadioButton mobil_radio;
+  private javax.swing.JLabel mobil_title;
+  private javax.swing.JPanel mobil_title_panel;
+  private javax.swing.JPanel motor_panel;
   private javax.swing.JRadioButton motor_radio;
+  private javax.swing.JLabel motor_title;
+  private javax.swing.JPanel motor_title_panel;
   private javax.swing.JRadioButton nonmember_radio;
   private javax.swing.JTextField nopol_input;
   private javax.swing.JPanel nopol_panel;
   private javax.swing.JLabel nopol_title;
+  private javax.swing.JLabel num_jumlah_kendaraan;
+  private javax.swing.JPanel others_panel;
+  private javax.swing.JLabel others_title;
+  private javax.swing.JPanel others_title_panel;
   private javax.swing.JPanel payment_panel;
   private javax.swing.JPanel pic_1;
   private javax.swing.JPanel pic_2;
@@ -1283,8 +1518,10 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel signout_icon;
   private javax.swing.JPanel status_panel;
   private javax.swing.JLabel status_title;
+  private javax.swing.JPanel table_panel;
   private javax.swing.JTable table_status_payment1;
   private javax.swing.JTable table_status_payment3;
+  private javax.swing.JPanel table_title_panel;
   private javax.swing.JPanel terisi_panel;
   private javax.swing.JPanel terisi_panel2;
   private javax.swing.JPanel terisi_title_panel;
@@ -1294,6 +1531,9 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel tipe_panel;
   private javax.swing.JLabel tipe_title;
   private javax.swing.JLabel title;
+  private javax.swing.JLabel total_mobil_parkir;
+  private javax.swing.JLabel total_motor_parkir;
+  private javax.swing.JLabel total_title;
   private javax.swing.JRadioButton truk_radio;
   private javax.swing.JLabel user_pic;
   private javax.swing.JPanel validated_panel;
