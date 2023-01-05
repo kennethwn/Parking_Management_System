@@ -15,6 +15,7 @@ public class MainView extends javax.swing.JFrame {
     initComponents();
     setTitle("Parking Management System");
     setLocationRelativeTo(null);
+    setResizable(false);
     setExtendedState(JFrame.MAXIMIZED_BOTH); 
   }
 
@@ -68,9 +69,15 @@ public class MainView extends javax.swing.JFrame {
     kosong_panel = new javax.swing.JPanel();
     kosong_title_panel = new javax.swing.JPanel();
     jLabel3 = new javax.swing.JLabel();
+    jumlah_kosong = new javax.swing.JLabel();
     terisi_panel = new javax.swing.JPanel();
     terisi_title_panel = new javax.swing.JPanel();
     jLabel4 = new javax.swing.JLabel();
+    jumlah_terisi = new javax.swing.JLabel();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    table_status_payment1 = new javax.swing.JTable();
+    cta_button_validate = new javax.swing.JPanel();
+    cta_validate = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
@@ -455,6 +462,9 @@ public class MainView extends javax.swing.JFrame {
     cta_button_next.setBackground(new java.awt.Color(75, 86, 210));
     cta_button_next.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     cta_button_next.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        cta_button_nextMouseClicked(evt);
+      }
       public void mouseEntered(java.awt.event.MouseEvent evt) {
         cta_button_nextMouseEntered(evt);
       }
@@ -478,7 +488,7 @@ public class MainView extends javax.swing.JFrame {
     cta_button_next.setLayout(cta_button_nextLayout);
     cta_button_nextLayout.setHorizontalGroup(
       cta_button_nextLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_next, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(cta_next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     cta_button_nextLayout.setVerticalGroup(
       cta_button_nextLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -549,7 +559,7 @@ public class MainView extends javax.swing.JFrame {
     beranda_panelLayout.setVerticalGroup(
       beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(beranda_panelLayout.createSequentialGroup()
-        .addContainerGap(48, Short.MAX_VALUE)
+        .addContainerGap(69, Short.MAX_VALUE)
         .addGroup(beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(pic_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -576,7 +586,7 @@ public class MainView extends javax.swing.JFrame {
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(daftar_kendaraan_panelLayout.createSequentialGroup()
         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 561, Short.MAX_VALUE))
+        .addGap(0, 582, Short.MAX_VALUE))
     );
 
     feature_panel.add(daftar_kendaraan_panel, "card3");
@@ -597,7 +607,7 @@ public class MainView extends javax.swing.JFrame {
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(history_panelLayout.createSequentialGroup()
         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 561, Short.MAX_VALUE))
+        .addGap(0, 582, Short.MAX_VALUE))
     );
 
     feature_panel.add(history_panel, "card4");
@@ -625,17 +635,23 @@ public class MainView extends javax.swing.JFrame {
       .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
     );
 
+    jumlah_kosong.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    jumlah_kosong.setForeground(new java.awt.Color(0, 0, 0));
+    jumlah_kosong.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
     javax.swing.GroupLayout kosong_panelLayout = new javax.swing.GroupLayout(kosong_panel);
     kosong_panel.setLayout(kosong_panelLayout);
     kosong_panelLayout.setHorizontalGroup(
       kosong_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(kosong_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jumlah_kosong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     kosong_panelLayout.setVerticalGroup(
       kosong_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(kosong_panelLayout.createSequentialGroup()
         .addComponent(kosong_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 150, Short.MAX_VALUE))
+        .addGap(0, 0, 0)
+        .addComponent(jumlah_kosong, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
     );
 
     terisi_panel.setBackground(new java.awt.Color(255, 255, 255));
@@ -659,17 +675,95 @@ public class MainView extends javax.swing.JFrame {
       .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
     );
 
+    jumlah_terisi.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    jumlah_terisi.setForeground(new java.awt.Color(0, 0, 0));
+    jumlah_terisi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
     javax.swing.GroupLayout terisi_panelLayout = new javax.swing.GroupLayout(terisi_panel);
     terisi_panel.setLayout(terisi_panelLayout);
     terisi_panelLayout.setHorizontalGroup(
       terisi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(terisi_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jumlah_terisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     terisi_panelLayout.setVerticalGroup(
       terisi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(terisi_panelLayout.createSequentialGroup()
         .addComponent(terisi_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, Short.MAX_VALUE))
+        .addGap(0, 0, 0)
+        .addComponent(jumlah_terisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    table_status_payment1.setBackground(new java.awt.Color(255, 255, 255));
+    table_status_payment1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    table_status_payment1.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+      },
+      new String [] {
+        "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
+      }
+    ) {
+      Class[] types = new Class [] {
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+      };
+      boolean[] canEdit = new boolean [] {
+        false, false, false, false, false, false
+      };
+
+      public Class getColumnClass(int columnIndex) {
+        return types [columnIndex];
+      }
+
+      public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+      }
+    });
+    table_status_payment1.setGridColor(new java.awt.Color(0, 0, 0));
+    table_status_payment1.getTableHeader().setReorderingAllowed(false);
+    jScrollPane1.setViewportView(table_status_payment1);
+    if (table_status_payment1.getColumnModel().getColumnCount() > 0) {
+      table_status_payment1.getColumnModel().getColumn(0).setResizable(false);
+      table_status_payment1.getColumnModel().getColumn(1).setResizable(false);
+      table_status_payment1.getColumnModel().getColumn(2).setResizable(false);
+      table_status_payment1.getColumnModel().getColumn(3).setResizable(false);
+      table_status_payment1.getColumnModel().getColumn(4).setResizable(false);
+      table_status_payment1.getColumnModel().getColumn(5).setResizable(false);
+    }
+
+    cta_button_validate.setBackground(new java.awt.Color(75, 86, 210));
+    cta_button_validate.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseEntered(java.awt.event.MouseEvent evt) {
+        cta_button_validateMouseEntered(evt);
+      }
+      public void mouseExited(java.awt.event.MouseEvent evt) {
+        cta_button_validateMouseExited(evt);
+      }
+      public void mousePressed(java.awt.event.MouseEvent evt) {
+        cta_button_validateMousePressed(evt);
+      }
+      public void mouseReleased(java.awt.event.MouseEvent evt) {
+        cta_button_validateMouseReleased(evt);
+      }
+    });
+
+    cta_validate.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    cta_validate.setForeground(new java.awt.Color(255, 255, 255));
+    cta_validate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    cta_validate.setText("VALIDASI BAYAR");
+
+    javax.swing.GroupLayout cta_button_validateLayout = new javax.swing.GroupLayout(cta_button_validate);
+    cta_button_validate.setLayout(cta_button_validateLayout);
+    cta_button_validateLayout.setHorizontalGroup(
+      cta_button_validateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_validate, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+    );
+    cta_button_validateLayout.setVerticalGroup(
+      cta_button_validateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_validate, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
     );
 
     javax.swing.GroupLayout payment_panelLayout = new javax.swing.GroupLayout(payment_panel);
@@ -677,10 +771,18 @@ public class MainView extends javax.swing.JFrame {
     payment_panelLayout.setHorizontalGroup(
       payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(payment_panelLayout.createSequentialGroup()
-        .addGap(60, 60, 60)
-        .addComponent(kosong_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(18, 18, 18)
-        .addComponent(terisi_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(payment_panelLayout.createSequentialGroup()
+            .addGap(60, 60, 60)
+            .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(jScrollPane1)
+              .addGroup(payment_panelLayout.createSequentialGroup()
+                .addComponent(kosong_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(terisi_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+          .addGroup(payment_panelLayout.createSequentialGroup()
+            .addGap(367, 367, 367)
+            .addComponent(cta_button_validate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addContainerGap(30, Short.MAX_VALUE))
     );
     payment_panelLayout.setVerticalGroup(
@@ -690,7 +792,11 @@ public class MainView extends javax.swing.JFrame {
         .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(kosong_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(terisi_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        .addContainerGap(401, Short.MAX_VALUE))
+        .addGap(33, 33, 33)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(43, 43, 43)
+        .addComponent(cta_button_validate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(67, Short.MAX_VALUE))
     );
 
     feature_panel.add(payment_panel, "card5");
@@ -834,6 +940,26 @@ public class MainView extends javax.swing.JFrame {
     cta_button.changeColor(cta_button_next, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_nextMouseReleased
 
+  private void cta_button_nextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_nextMouseClicked
+    cta_button.changePanel(feature_panel, payment_panel);
+  }//GEN-LAST:event_cta_button_nextMouseClicked
+
+  private void cta_button_validateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseEntered
+    cta_button.changeColor(cta_button_validate, new Color(71, 33, 131));
+  }//GEN-LAST:event_cta_button_validateMouseEntered
+
+  private void cta_button_validateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseExited
+    cta_button.changeColor(cta_button_validate, new Color(75, 86, 210));
+  }//GEN-LAST:event_cta_button_validateMouseExited
+
+  private void cta_button_validateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMousePressed
+    cta_button.changeColor(cta_button_validate, new Color(75, 86, 210));
+  }//GEN-LAST:event_cta_button_validateMousePressed
+
+  private void cta_button_validateMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseReleased
+    cta_button.changeColor(cta_button_validate, new Color(71, 33, 131));
+  }//GEN-LAST:event_cta_button_validateMouseReleased
+
   
   public static void main(String args[]) {
     /* Set the Nimbus look and feel */
@@ -874,10 +1000,12 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JRadioButton bus_radio;
   private javax.swing.JPanel cta_beranda;
   private javax.swing.JPanel cta_button_next;
+  private javax.swing.JPanel cta_button_validate;
   private javax.swing.JPanel cta_daftar_kendaraan;
   private javax.swing.JLabel cta_next;
   private javax.swing.JPanel cta_riwayat;
   private javax.swing.JPanel cta_signout;
+  private javax.swing.JLabel cta_validate;
   private javax.swing.JLabel daftar_kendaraan;
   private javax.swing.JPanel daftar_kendaraan_panel;
   private javax.swing.JPanel feature_panel;
@@ -887,8 +1015,11 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
+  private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
+  private javax.swing.JLabel jumlah_kosong;
+  private javax.swing.JLabel jumlah_terisi;
   private javax.swing.JPanel keterangan;
   private javax.swing.JPanel kosong_panel;
   private javax.swing.JPanel kosong_title_panel;
@@ -911,6 +1042,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel signout_icon;
   private javax.swing.JPanel status_panel;
   private javax.swing.JLabel status_title;
+  private javax.swing.JTable table_status_payment1;
   private javax.swing.JPanel terisi_panel;
   private javax.swing.JPanel terisi_title_panel;
   private javax.swing.JPanel tipe_panel;
