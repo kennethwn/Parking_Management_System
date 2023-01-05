@@ -1,5 +1,6 @@
 package com.mycompany.parkingmanagement;
 
+import com.mycompany.parkingmanagement.logic.Admin;
 import com.mycompany.parkingmanagement.logic.Database;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -271,8 +272,8 @@ public class LoginForm extends javax.swing.JFrame {
     }
     else password_reminder.setText("");
     
-    Database userLogin = new Database();
-    if(userLogin.userAuth(_username, _password) == true &&
+    Admin adminLogin = new Admin();
+    if(adminLogin.userAuth(_username, _password) == true &&
       _username.length() >= 6 &&
       _password.length() >= 6
     ) {
