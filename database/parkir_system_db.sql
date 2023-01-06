@@ -54,8 +54,8 @@ insert into jenis_kendaraan value
     ('TYPE4', 'Bus', 12000);
     
 insert into membership value
-	('1', 'MEMBER'),
-    ('0', 'NON-MEMBER');
+	('1', 'Member'),
+    ('0', 'Nonmember');
 
 insert into kendaraan value
 	('D l645 UCO', '1', 'TYPE2', 'Honda', "10:00:00", null),
