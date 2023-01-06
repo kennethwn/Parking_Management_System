@@ -1,10 +1,8 @@
 package com.mycompany.parkingmanagement.logic;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class Admin {
   private String username;
@@ -20,19 +18,19 @@ public class Admin {
   public String getUsername() {return this.username;}
   public String getPassword() {return this.password;}
   
-  public boolean userAuth(String email,String password) {
+  public boolean userAuth(String username,String pass) {
     try {
       connect = Database.getConnection();
       
       String sql = "select "
-              + "email, password_officer "
-              + "from officer "
-              + "where email=? and password_officer=?";
+              + "username, pass "
+              + "from admin_table "
+              + "where username=? and pass=?";
       
       preparedStatement = connect.prepareStatement(sql);
       
-      preparedStatement.setString(1, email);
-      preparedStatement.setString(2, password);
+      preparedStatement.setString(1, username);
+      preparedStatement.setString(2, pass);
       
       rs = preparedStatement.executeQuery();
      
