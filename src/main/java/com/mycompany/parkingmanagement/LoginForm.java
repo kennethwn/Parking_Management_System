@@ -39,6 +39,8 @@ public class LoginForm extends javax.swing.JFrame {
     password_reminder = new javax.swing.JLabel();
     cta_exit_panel = new javax.swing.JPanel();
     cta_exit = new javax.swing.JLabel();
+    jSeparator1 = new javax.swing.JSeparator();
+    jSeparator2 = new javax.swing.JSeparator();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setUndecorated(true);
@@ -94,10 +96,10 @@ public class LoginForm extends javax.swing.JFrame {
     jLabel1.setForeground(new java.awt.Color(0, 0, 0));
     jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel1.setText("SIGN IN ACCOUNT");
-    jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 220, 60));
+    jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 220, 60));
 
-    Username.setBackground(new java.awt.Color(241, 246, 245));
-    Username.setFont(new java.awt.Font("sansserif", 2, 12)); // NOI18N
+    Username.setBackground(new java.awt.Color(255, 255, 255));
+    Username.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
     Username.setForeground(new java.awt.Color(149, 149, 149));
     Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
     Username.setText("Username");
@@ -113,10 +115,10 @@ public class LoginForm extends javax.swing.JFrame {
         UsernameActionPerformed(evt);
       }
     });
-    jPanel2.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, 40));
+    jPanel2.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 280, 40));
 
-    Password.setBackground(new java.awt.Color(241, 246, 245));
-    Password.setFont(new java.awt.Font("sansserif", 2, 12)); // NOI18N
+    Password.setBackground(new java.awt.Color(255, 255, 255));
+    Password.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
     Password.setForeground(new java.awt.Color(149, 149, 149));
     Password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
     Password.setText("Password");
@@ -126,7 +128,7 @@ public class LoginForm extends javax.swing.JFrame {
         PasswordFocusGained(evt);
       }
     });
-    jPanel2.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 280, 40));
+    jPanel2.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 280, 40));
 
     Signin_button.setBackground(new java.awt.Color(75, 86, 210));
     Signin_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -215,6 +217,12 @@ public class LoginForm extends javax.swing.JFrame {
     );
 
     jPanel2.add(cta_exit_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 40, 30));
+
+    jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
+    jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 280, 10));
+
+    jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+    jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 262, 280, 10));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -355,6 +363,8 @@ public class LoginForm extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel5;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
+  private javax.swing.JSeparator jSeparator1;
+  private javax.swing.JSeparator jSeparator2;
   private javax.swing.JLabel password_reminder;
   private javax.swing.JLabel username_reminder;
   // End of variables declaration//GEN-END:variables
