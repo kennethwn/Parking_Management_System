@@ -9,7 +9,7 @@ public class Database {
   public static Connection getConnection() {
     if(connect == null) {
       try {
-        String url = "jdbc:mysql://localhost:3306/parking_management_oop";
+        String url = "jdbc:mysql://localhost:3306/parkir_system";
         String user = "root";
         String pw = "";
         
