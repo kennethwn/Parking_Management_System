@@ -1,6 +1,8 @@
 create database parkir_system;
 use parkir_system;
 
+# drop database parkir_system;
+
 create table admin_table (
 	id_admin varchar(255) primary key not null,
     username varchar(255) not null,
@@ -59,10 +61,10 @@ insert into membership value
 
 insert into kendaraan value
 	('D l645 UCO', '1', 'TYPE2', 'Honda', "10:00:00", null),
-    ('E 1992 ICA', '0', 'TYPE1', 'Avanza', "11:50:00", null),
+    ('E 1992 ICA', '0', 'TYPE1', 'Avanza', "11:50:00", "13:00:00"),
     ('D 5512 ABD', '1', 'TYPE1', 'Avanza', "10:45:00", null),
     ('E 2231 POW', '1', 'TYPE2', 'Mio', "10:00:00", null),
-    ('E 5192 AZZ', '0', 'TYPE2', 'BMW', "07:00:00", null),
+    ('E 5192 AZZ', '0', 'TYPE2', 'BMW', "07:00:00", "12:00:00"),
     ('F 1945 OF', '0', 'TYPE3', 'Mitsubishi', "08:00:00", null),
     ('B 0706 BCL', '0', 'TYPE4', 'Mercedes Benz', "06:00:00", null);
     
@@ -84,4 +86,6 @@ insert into kendaraan_payment (
     ('E 1992 ICA', '002', 'L'),
     ('D 5512 ABD', '003', 'BL'),
     ('E 2231 POW', '001', 'BL'),
-    ('E 5192 AZZ', '001', 'L');
+    ('E 5192 AZZ', '001', 'L'),
+    ('F 1945 OF', '001', 'BL'),
+    ('B 0706 BCL', '002', 'BL');
