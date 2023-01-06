@@ -82,7 +82,14 @@ public class MainView extends javax.swing.JFrame {
     others_title = new javax.swing.JLabel();
     jLabel1 = new javax.swing.JLabel();
     history_panel = new javax.swing.JPanel();
-    jLabel2 = new javax.swing.JLabel();
+    table_riwayat_panel = new javax.swing.JPanel();
+    table_riwayat_title_panel = new javax.swing.JPanel();
+    table_riwayat_title = new javax.swing.JLabel();
+    jScrollPane4 = new javax.swing.JScrollPane();
+    jTable2 = new javax.swing.JTable();
+    search_panel = new javax.swing.JPanel();
+    search_textfield = new javax.swing.JTextField();
+    cta_search = new javax.swing.JButton();
     payment_panel = new javax.swing.JPanel();
     kosong_panel = new javax.swing.JPanel();
     kosong_title_panel = new javax.swing.JPanel();
@@ -585,12 +592,12 @@ public class MainView extends javax.swing.JFrame {
             .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGap(18, 18, 18)
             .addComponent(pic_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addContainerGap(41, Short.MAX_VALUE))
+        .addContainerGap(110, Short.MAX_VALUE))
     );
     beranda_panelLayout.setVerticalGroup(
       beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(beranda_panelLayout.createSequentialGroup()
-        .addContainerGap(69, Short.MAX_VALUE)
+        .addContainerGap(52, Short.MAX_VALUE)
         .addGroup(beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(pic_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -800,7 +807,7 @@ public class MainView extends javax.swing.JFrame {
     daftar_kendaraan_panelLayout.setHorizontalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
-        .addContainerGap(31, Short.MAX_VALUE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
           .addComponent(table_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(javax.swing.GroupLayout.Alignment.LEADING, daftar_kendaraan_panelLayout.createSequentialGroup()
@@ -814,7 +821,7 @@ public class MainView extends javax.swing.JFrame {
     daftar_kendaraan_panelLayout.setVerticalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
-        .addContainerGap(38, Short.MAX_VALUE)
+        .addContainerGap(21, Short.MAX_VALUE)
         .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(mobil_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(motor_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -828,21 +835,132 @@ public class MainView extends javax.swing.JFrame {
 
     history_panel.setBackground(new java.awt.Color(255, 255, 255));
 
-    jLabel2.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-    jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel2.setText("History");
+    table_riwayat_title_panel.setBackground(new java.awt.Color(75, 86, 210));
+
+    table_riwayat_title.setFont(new java.awt.Font("sansserif", 0, 16)); // NOI18N
+    table_riwayat_title.setForeground(new java.awt.Color(255, 255, 255));
+    table_riwayat_title.setText("Daftar Kendaraan");
+
+    javax.swing.GroupLayout table_riwayat_title_panelLayout = new javax.swing.GroupLayout(table_riwayat_title_panel);
+    table_riwayat_title_panel.setLayout(table_riwayat_title_panelLayout);
+    table_riwayat_title_panelLayout.setHorizontalGroup(
+      table_riwayat_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(table_riwayat_title_panelLayout.createSequentialGroup()
+        .addGap(17, 17, 17)
+        .addComponent(table_riwayat_title)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    table_riwayat_title_panelLayout.setVerticalGroup(
+      table_riwayat_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(table_riwayat_title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+    );
+
+    jScrollPane4.setBackground(new java.awt.Color(255, 255, 255));
+
+    jTable2.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+      },
+      new String [] {
+        "Tanggal Keluar", "No Polisi", "Tipe ", "Merk", "Jam Masuk", "Jam Keluar"
+      }
+    ) {
+      Class[] types = new Class [] {
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+      };
+      boolean[] canEdit = new boolean [] {
+        false, false, false, false, false, false
+      };
+
+      public Class getColumnClass(int columnIndex) {
+        return types [columnIndex];
+      }
+
+      public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+      }
+    });
+    jTable2.getTableHeader().setReorderingAllowed(false);
+    jScrollPane4.setViewportView(jTable2);
+    if (jTable2.getColumnModel().getColumnCount() > 0) {
+      jTable2.getColumnModel().getColumn(0).setResizable(false);
+      jTable2.getColumnModel().getColumn(1).setResizable(false);
+      jTable2.getColumnModel().getColumn(2).setResizable(false);
+      jTable2.getColumnModel().getColumn(3).setResizable(false);
+      jTable2.getColumnModel().getColumn(4).setResizable(false);
+      jTable2.getColumnModel().getColumn(5).setResizable(false);
+    }
+
+    javax.swing.GroupLayout table_riwayat_panelLayout = new javax.swing.GroupLayout(table_riwayat_panel);
+    table_riwayat_panel.setLayout(table_riwayat_panelLayout);
+    table_riwayat_panelLayout.setHorizontalGroup(
+      table_riwayat_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(table_riwayat_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+    );
+    table_riwayat_panelLayout.setVerticalGroup(
+      table_riwayat_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(table_riwayat_panelLayout.createSequentialGroup()
+        .addComponent(table_riwayat_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(jScrollPane4))
+    );
+
+    search_panel.setBackground(new java.awt.Color(255, 255, 255));
+    search_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    search_textfield.setBackground(new java.awt.Color(255, 255, 255));
+    search_textfield.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
+    search_textfield.setForeground(new java.awt.Color(149, 149, 149));
+    search_textfield.setText("No Polisi");
+    search_textfield.setBorder(null);
+
+    javax.swing.GroupLayout search_panelLayout = new javax.swing.GroupLayout(search_panel);
+    search_panel.setLayout(search_panelLayout);
+    search_panelLayout.setHorizontalGroup(
+      search_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, search_panelLayout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(search_textfield))
+    );
+    search_panelLayout.setVerticalGroup(
+      search_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(search_textfield, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    );
+
+    cta_search.setBackground(new java.awt.Color(75, 86, 210));
+    cta_search.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+    cta_search.setForeground(new java.awt.Color(255, 255, 255));
+    cta_search.setText("Search");
+    cta_search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
     javax.swing.GroupLayout history_panelLayout = new javax.swing.GroupLayout(history_panel);
     history_panel.setLayout(history_panelLayout);
     history_panelLayout.setHorizontalGroup(
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 992, Short.MAX_VALUE)
+      .addGroup(history_panelLayout.createSequentialGroup()
+        .addGap(52, 52, 52)
+        .addGroup(history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addGroup(history_panelLayout.createSequentialGroup()
+            .addComponent(search_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(18, 18, 18)
+            .addComponent(cta_search, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(table_riwayat_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap(99, Short.MAX_VALUE))
     );
     history_panelLayout.setVerticalGroup(
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(history_panelLayout.createSequentialGroup()
-        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 582, Short.MAX_VALUE))
+        .addGap(69, 69, 69)
+        .addGroup(history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(cta_search, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(search_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(37, 37, 37)
+        .addComponent(table_riwayat_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(29, Short.MAX_VALUE))
     );
 
     feature_panel.add(history_panel, "card4");
@@ -1022,7 +1140,7 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(kosong_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(terisi_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-        .addContainerGap(34, Short.MAX_VALUE))
+        .addContainerGap(103, Short.MAX_VALUE))
     );
     payment_panelLayout.setVerticalGroup(
       payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1035,7 +1153,7 @@ public class MainView extends javax.swing.JFrame {
         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(43, 43, 43)
         .addComponent(cta_button_validate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(39, Short.MAX_VALUE))
+        .addContainerGap(22, Short.MAX_VALUE))
     );
 
     feature_panel.add(payment_panel, "card5");
@@ -1212,7 +1330,7 @@ public class MainView extends javax.swing.JFrame {
               .addGap(18, 18, 18)
               .addComponent(terisi_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
           .addComponent(cta_button_return_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(34, Short.MAX_VALUE))
+        .addContainerGap(103, Short.MAX_VALUE))
     );
     validated_panelLayout.setVerticalGroup(
       validated_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1225,7 +1343,7 @@ public class MainView extends javax.swing.JFrame {
         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(43, 43, 43)
         .addComponent(cta_button_return_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(39, Short.MAX_VALUE))
+        .addContainerGap(22, Short.MAX_VALUE))
     );
 
     feature_panel.add(validated_panel, "card5");
@@ -1462,6 +1580,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel cta_next;
   private javax.swing.JLabel cta_return_beranda;
   private javax.swing.JPanel cta_riwayat;
+  private javax.swing.JButton cta_search;
   private javax.swing.JPanel cta_signout;
   private javax.swing.JLabel cta_validate;
   private javax.swing.JLabel daftar_kendaraan;
@@ -1471,13 +1590,14 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel history_panel;
   private javax.swing.JLabel home_icon;
   private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel2;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
   private javax.swing.JScrollPane jScrollPane3;
+  private javax.swing.JScrollPane jScrollPane4;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
   private javax.swing.JTable jTable1;
+  private javax.swing.JTable jTable2;
   private javax.swing.JLabel jumlah_kosong;
   private javax.swing.JLabel jumlah_kosong2;
   private javax.swing.JLabel jumlah_terisi;
@@ -1513,12 +1633,17 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel pic_2;
   private javax.swing.JLabel repo_icon;
   private javax.swing.JLabel riwayat;
+  private javax.swing.JPanel search_panel;
+  private javax.swing.JTextField search_textfield;
   private javax.swing.JPanel side_panel;
   private javax.swing.JLabel sign_out;
   private javax.swing.JLabel signout_icon;
   private javax.swing.JPanel status_panel;
   private javax.swing.JLabel status_title;
   private javax.swing.JPanel table_panel;
+  private javax.swing.JPanel table_riwayat_panel;
+  private javax.swing.JLabel table_riwayat_title;
+  private javax.swing.JPanel table_riwayat_title_panel;
   private javax.swing.JTable table_status_payment1;
   private javax.swing.JTable table_status_payment3;
   private javax.swing.JPanel table_title_panel;
