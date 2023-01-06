@@ -15,7 +15,7 @@ public class MainView extends javax.swing.JFrame {
     initComponents();
     setTitle("Parking Management System");
     setLocationRelativeTo(null);
-    setResizable(true);
+    setResizable(false);
     setExtendedState(JFrame.MAXIMIZED_BOTH); 
   }
 
