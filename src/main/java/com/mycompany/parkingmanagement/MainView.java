@@ -12,17 +12,20 @@ public class MainView extends javax.swing.JFrame {
 
   /** Creates new form MainView */
   public MainView() {
+    setUndecorated(false);
     initComponents();
     setTitle("Parking Management System");
     setLocationRelativeTo(null);
     setResizable(false);
-    setExtendedState(JFrame.MAXIMIZED_BOTH); 
+    //setExtendedState(JFrame.MAXIMIZED_BOTH); 
   }
 
   @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    typeGroup = new javax.swing.ButtonGroup();
+    membershipGroup = new javax.swing.ButtonGroup();
     main_panel = new javax.swing.JPanel();
     side_panel = new javax.swing.JPanel();
     jSeparator1 = new javax.swing.JSeparator();
@@ -119,7 +122,9 @@ public class MainView extends javax.swing.JFrame {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
-    setPreferredSize(new java.awt.Dimension(900, 600));
+    setExtendedState(1);
+    setPreferredSize(new java.awt.Dimension(1300, 700));
+    setResizable(false);
 
     main_panel.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -402,6 +407,7 @@ public class MainView extends javax.swing.JFrame {
     status_title.setText("Status : ");
 
     member_radio.setBackground(new java.awt.Color(255, 255, 255));
+    membershipGroup.add(member_radio);
     member_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     member_radio.setForeground(new java.awt.Color(219, 219, 219));
     member_radio.setText("Member");
@@ -413,6 +419,7 @@ public class MainView extends javax.swing.JFrame {
     });
 
     nonmember_radio.setBackground(new java.awt.Color(255, 255, 255));
+    membershipGroup.add(nonmember_radio);
     nonmember_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     nonmember_radio.setForeground(new java.awt.Color(0, 0, 0));
     nonmember_radio.setText("Nonmember");
@@ -449,21 +456,25 @@ public class MainView extends javax.swing.JFrame {
     tipe_title.setText("Tipe :");
 
     mobil_radio.setBackground(new java.awt.Color(255, 255, 255));
+    typeGroup.add(mobil_radio);
     mobil_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     mobil_radio.setForeground(new java.awt.Color(0, 0, 0));
     mobil_radio.setText("Mobil");
 
     motor_radio.setBackground(new java.awt.Color(255, 255, 255));
+    typeGroup.add(motor_radio);
     motor_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     motor_radio.setForeground(new java.awt.Color(0, 0, 0));
     motor_radio.setText("Motor");
 
     truk_radio.setBackground(new java.awt.Color(255, 255, 255));
+    typeGroup.add(truk_radio);
     truk_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     truk_radio.setForeground(new java.awt.Color(0, 0, 0));
     truk_radio.setText("Truk");
 
     bus_radio.setBackground(new java.awt.Color(255, 255, 255));
+    typeGroup.add(bus_radio);
     bus_radio.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
     bus_radio.setForeground(new java.awt.Color(0, 0, 0));
     bus_radio.setText("Bus");
@@ -566,7 +577,7 @@ public class MainView extends javax.swing.JFrame {
     );
     pic_1Layout.setVerticalGroup(
       pic_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 0, Short.MAX_VALUE)
+      .addGap(0, 278, Short.MAX_VALUE)
     );
 
     javax.swing.GroupLayout pic_2Layout = new javax.swing.GroupLayout(pic_2);
@@ -577,7 +588,7 @@ public class MainView extends javax.swing.JFrame {
     );
     pic_2Layout.setVerticalGroup(
       pic_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 240, Short.MAX_VALUE)
+      .addGap(0, 0, Short.MAX_VALUE)
     );
 
     javax.swing.GroupLayout beranda_panelLayout = new javax.swing.GroupLayout(beranda_panel);
@@ -597,10 +608,10 @@ public class MainView extends javax.swing.JFrame {
     beranda_panelLayout.setVerticalGroup(
       beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(beranda_panelLayout.createSequentialGroup()
-        .addContainerGap(52, Short.MAX_VALUE)
+        .addContainerGap(14, Short.MAX_VALUE)
         .addGroup(beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(pic_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(pic_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addGap(18, 18, 18)
         .addComponent(keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(68, 68, 68))
@@ -906,7 +917,7 @@ public class MainView extends javax.swing.JFrame {
       .addGroup(table_riwayat_panelLayout.createSequentialGroup()
         .addComponent(table_riwayat_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(0, 0, 0)
-        .addComponent(jScrollPane4))
+        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE))
     );
 
     search_panel.setBackground(new java.awt.Color(255, 255, 255));
@@ -942,25 +953,25 @@ public class MainView extends javax.swing.JFrame {
     history_panelLayout.setHorizontalGroup(
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(history_panelLayout.createSequentialGroup()
-        .addGap(52, 52, 52)
+        .addGap(55, 55, 55)
         .addGroup(history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addGroup(history_panelLayout.createSequentialGroup()
             .addComponent(search_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGap(18, 18, 18)
             .addComponent(cta_search, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addComponent(table_riwayat_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(99, Short.MAX_VALUE))
+        .addContainerGap(96, Short.MAX_VALUE))
     );
     history_panelLayout.setVerticalGroup(
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(history_panelLayout.createSequentialGroup()
-        .addGap(69, 69, 69)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, history_panelLayout.createSequentialGroup()
+        .addContainerGap(52, Short.MAX_VALUE)
         .addGroup(history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(cta_search, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(search_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(37, 37, 37)
         .addComponent(table_riwayat_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(29, Short.MAX_VALUE))
+        .addGap(68, 68, 68))
     );
 
     feature_panel.add(history_panel, "card4");
@@ -1612,6 +1623,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel list_icon;
   private javax.swing.JPanel main_panel;
   private javax.swing.JRadioButton member_radio;
+  private javax.swing.ButtonGroup membershipGroup;
   private javax.swing.JPanel mobil_panel;
   private javax.swing.JRadioButton mobil_radio;
   private javax.swing.JLabel mobil_title;
@@ -1660,6 +1672,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JLabel total_motor_parkir;
   private javax.swing.JLabel total_title;
   private javax.swing.JRadioButton truk_radio;
+  private javax.swing.ButtonGroup typeGroup;
   private javax.swing.JLabel user_pic;
   private javax.swing.JPanel validated_panel;
   // End of variables declaration//GEN-END:variables
