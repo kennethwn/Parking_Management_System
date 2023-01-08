@@ -1,14 +1,19 @@
 package com.mycompany.parkingmanagement;
 
+import com.mycompany.parkingmanagement.logic.Vehicles.Dashboard;
+import com.mycompany.parkingmanagement.logic.Vehicles.History;
+import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
 import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 
 public class MainView extends javax.swing.JFrame {
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
+  
+  private Dashboard dashboard = new Dashboard();
+  private VehicleList vehicle_list = new VehicleList();
+  private History history = new History();
 
   /** Creates new form MainView */
   public MainView() {
@@ -83,7 +88,7 @@ public class MainView extends javax.swing.JFrame {
     others_panel = new javax.swing.JPanel();
     others_title_panel = new javax.swing.JPanel();
     others_title = new javax.swing.JLabel();
-    jLabel1 = new javax.swing.JLabel();
+    total_lainnya_parkir = new javax.swing.JLabel();
     history_panel = new javax.swing.JPanel();
     table_riwayat_panel = new javax.swing.JPanel();
     table_riwayat_title_panel = new javax.swing.JPanel();
@@ -794,23 +799,23 @@ public class MainView extends javax.swing.JFrame {
       .addComponent(others_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
     );
 
-    jLabel1.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
-    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-    jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    total_lainnya_parkir.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
+    total_lainnya_parkir.setForeground(new java.awt.Color(0, 0, 0));
+    total_lainnya_parkir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout others_panelLayout = new javax.swing.GroupLayout(others_panel);
     others_panel.setLayout(others_panelLayout);
     others_panelLayout.setHorizontalGroup(
       others_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addComponent(others_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(total_lainnya_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     others_panelLayout.setVerticalGroup(
       others_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(others_panelLayout.createSequentialGroup()
         .addComponent(others_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(0, 0, 0)
-        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+        .addComponent(total_lainnya_parkir, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout daftar_kendaraan_panelLayout = new javax.swing.GroupLayout(daftar_kendaraan_panel);
@@ -1447,8 +1452,20 @@ public class MainView extends javax.swing.JFrame {
     unboldUncoloredFont(riwayat);
   }//GEN-LAST:event_cta_berandaMouseClicked
 
+  private void totalMobilParkir() {
+    
+  }
+  
   private void cta_daftar_kendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_daftar_kendaraanMouseClicked
+    // Logic
     cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
+    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
+    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
+    
+    total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+    total_motor_parkir.setText(String.valueOf(motor_parkir));
+    
+    // Style
     boldColoredFont(daftar_kendaraan);
     unboldUncoloredFont(riwayat);
     unboldUncoloredFont(beranda);
@@ -1600,7 +1617,6 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel feature_panel;
   private javax.swing.JPanel history_panel;
   private javax.swing.JLabel home_icon;
-  private javax.swing.JLabel jLabel1;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
   private javax.swing.JScrollPane jScrollPane3;
@@ -1668,6 +1684,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel tipe_panel;
   private javax.swing.JLabel tipe_title;
   private javax.swing.JLabel title;
+  private javax.swing.JLabel total_lainnya_parkir;
   private javax.swing.JLabel total_mobil_parkir;
   private javax.swing.JLabel total_motor_parkir;
   private javax.swing.JLabel total_title;
