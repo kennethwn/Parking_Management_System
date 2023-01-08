@@ -2,9 +2,15 @@ package com.mycompany.parkingmanagement.logic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Database {
   private static Connection connect;
+  
+  public PreparedStatement preparedStatement;
+  public Connection connector;
+  public ResultSet rs;
   
   public static Connection getConnection() {
     if(connect == null) {
