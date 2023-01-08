@@ -25,12 +25,12 @@ public class LoginForm extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jPanel1 = new javax.swing.JPanel();
-    jLabel3 = new javax.swing.JLabel();
-    jLabel4 = new javax.swing.JLabel();
-    jLabel5 = new javax.swing.JLabel();
-    jPanel2 = new javax.swing.JPanel();
-    jLabel1 = new javax.swing.JLabel();
+    logo_panel = new javax.swing.JPanel();
+    logo_parking = new javax.swing.JLabel();
+    title_parking1 = new javax.swing.JLabel();
+    title_parking2 = new javax.swing.JLabel();
+    form_panel = new javax.swing.JPanel();
+    title_form = new javax.swing.JLabel();
     Username = new javax.swing.JTextField();
     Password = new javax.swing.JPasswordField();
     Signin_button = new javax.swing.JPanel();
@@ -41,68 +41,69 @@ public class LoginForm extends javax.swing.JFrame {
     cta_exit = new javax.swing.JLabel();
     jSeparator1 = new javax.swing.JSeparator();
     jSeparator2 = new javax.swing.JSeparator();
+    username_text = new javax.swing.JLabel();
+    password_text = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setUndecorated(true);
 
-    jPanel1.setBackground(new java.awt.Color(75, 86, 210));
+    logo_panel.setBackground(new java.awt.Color(75, 86, 210));
 
-    jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-    jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\asset\\rsz_1rsz_parking-logo.png")); // NOI18N
+    logo_parking.setBackground(new java.awt.Color(255, 255, 255));
+    logo_parking.setForeground(new java.awt.Color(255, 255, 255));
+    logo_parking.setIcon(new javax.swing.ImageIcon("D:\\Mata Kuliah\\Semester 3\\OOP\\Final Project\\asset\\rsz_1rsz_parking-logo.png")); // NOI18N
 
-    jLabel4.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-    jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel4.setText("PARKING MANAGEMENT");
+    title_parking1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+    title_parking1.setForeground(new java.awt.Color(255, 255, 255));
+    title_parking1.setText("PARKING MANAGEMENT");
 
-    jLabel5.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-    jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-    jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel5.setText("SYSTEM");
+    title_parking2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+    title_parking2.setForeground(new java.awt.Color(255, 255, 255));
+    title_parking2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_parking2.setText("SYSTEM");
 
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
+    javax.swing.GroupLayout logo_panelLayout = new javax.swing.GroupLayout(logo_panel);
+    logo_panel.setLayout(logo_panelLayout);
+    logo_panelLayout.setHorizontalGroup(
+      logo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(logo_panelLayout.createSequentialGroup()
         .addGap(94, 94, 94)
-        .addComponent(jLabel3)
+        .addComponent(logo_parking)
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logo_panelLayout.createSequentialGroup()
         .addGap(0, 35, Short.MAX_VALUE)
-        .addComponent(jLabel4)
+        .addComponent(title_parking1)
         .addGap(32, 32, 32))
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logo_panelLayout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(jLabel5)
+        .addComponent(title_parking2)
         .addGap(126, 126, 126))
     );
-    jPanel1Layout.setVerticalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
+    logo_panelLayout.setVerticalGroup(
+      logo_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(logo_panelLayout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(jLabel3)
+        .addComponent(logo_parking)
         .addGap(32, 32, 32)
-        .addComponent(jLabel4)
+        .addComponent(title_parking1)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jLabel5)
+        .addComponent(title_parking2)
         .addGap(92, 92, 92))
     );
 
-    jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-    jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    form_panel.setBackground(new java.awt.Color(255, 255, 255));
+    form_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-    jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-    jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel1.setText("SIGN IN ACCOUNT");
-    jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 220, 60));
+    title_form.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+    title_form.setForeground(new java.awt.Color(0, 0, 0));
+    title_form.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_form.setText("SIGN IN ACCOUNT");
+    form_panel.add(title_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 220, 60));
 
     Username.setBackground(new java.awt.Color(255, 255, 255));
     Username.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
     Username.setForeground(new java.awt.Color(149, 149, 149));
     Username.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-    Username.setText("Username");
     Username.setToolTipText("");
     Username.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     Username.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -115,20 +116,19 @@ public class LoginForm extends javax.swing.JFrame {
         UsernameActionPerformed(evt);
       }
     });
-    jPanel2.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 280, 40));
+    form_panel.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 280, 30));
 
     Password.setBackground(new java.awt.Color(255, 255, 255));
     Password.setFont(new java.awt.Font("sansserif", 2, 14)); // NOI18N
     Password.setForeground(new java.awt.Color(149, 149, 149));
     Password.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-    Password.setText("Password");
     Password.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     Password.addFocusListener(new java.awt.event.FocusAdapter() {
       public void focusGained(java.awt.event.FocusEvent evt) {
         PasswordFocusGained(evt);
       }
     });
-    jPanel2.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 280, 40));
+    form_panel.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 280, 30));
 
     Signin_button.setBackground(new java.awt.Color(75, 86, 210));
     Signin_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,13 +168,13 @@ public class LoginForm extends javax.swing.JFrame {
       .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
     );
 
-    jPanel2.add(Signin_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 280, 40));
+    form_panel.add(Signin_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 280, 40));
 
     username_reminder.setForeground(new java.awt.Color(255, 0, 0));
-    jPanel2.add(username_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 280, -1));
+    form_panel.add(username_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 280, -1));
 
     password_reminder.setForeground(new java.awt.Color(255, 0, 0));
-    jPanel2.add(password_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 280, -1));
+    form_panel.add(password_reminder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 280, 10));
 
     cta_exit_panel.setBackground(new java.awt.Color(255, 255, 255));
     cta_exit_panel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -216,27 +216,35 @@ public class LoginForm extends javax.swing.JFrame {
         .addComponent(cta_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
 
-    jPanel2.add(cta_exit_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 40, 30));
+    form_panel.add(cta_exit_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 40, 30));
 
     jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
-    jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 280, 10));
+    form_panel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 280, 10));
 
     jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
-    jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 262, 280, 10));
+    form_panel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 280, 10));
+
+    username_text.setForeground(new java.awt.Color(0, 0, 0));
+    username_text.setText("Username");
+    form_panel.add(username_text, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
+
+    password_text.setForeground(new java.awt.Color(0, 0, 0));
+    password_text.setText("Password");
+    form_panel.add(password_text, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(logo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addGap(0, 0, 0)
-        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addComponent(form_panel, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-      .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(form_panel, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+      .addComponent(logo_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
 
     pack();
@@ -271,7 +279,7 @@ public class LoginForm extends javax.swing.JFrame {
     String _password = Password.getText();
     
     if(_username.length() < 6) {
-      username_reminder.setText("Email is too short");
+      username_reminder.setText("Username is too short");
     }
     else username_reminder.setText("");
     
@@ -357,15 +365,17 @@ public class LoginForm extends javax.swing.JFrame {
   private javax.swing.JLabel cta;
   private javax.swing.JLabel cta_exit;
   private javax.swing.JPanel cta_exit_panel;
-  private javax.swing.JLabel jLabel1;
-  private javax.swing.JLabel jLabel3;
-  private javax.swing.JLabel jLabel4;
-  private javax.swing.JLabel jLabel5;
-  private javax.swing.JPanel jPanel1;
-  private javax.swing.JPanel jPanel2;
+  private javax.swing.JPanel form_panel;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
+  private javax.swing.JPanel logo_panel;
+  private javax.swing.JLabel logo_parking;
   private javax.swing.JLabel password_reminder;
+  private javax.swing.JLabel password_text;
+  private javax.swing.JLabel title_form;
+  private javax.swing.JLabel title_parking1;
+  private javax.swing.JLabel title_parking2;
   private javax.swing.JLabel username_reminder;
+  private javax.swing.JLabel username_text;
   // End of variables declaration//GEN-END:variables
 }
