@@ -1,16 +1,9 @@
 package com.mycompany.parkingmanagement.logic;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 public class Admin {
   private String username;
   private String password;
-  
-  private PreparedStatement preparedStatement;
-  private Connection connect;
-  private ResultSet rs;
+  private Database db = new Database();
   
   public void setUsername(String username) {this.username = username;}
   public void setPassword(String password) {this.password = password;}
@@ -20,21 +13,21 @@ public class Admin {
   
   public boolean userAuth(String username,String pass) {
     try {
-      connect = Database.getConnection();
+      db.connector = Database.getConnection();
       
       String sql = "select "
               + "username, pass "
               + "from admin_table "
               + "where username=? and pass=?";
       
-      preparedStatement = connect.prepareStatement(sql);
+      db.preparedStatement = db.connector.prepareStatement(sql);
       
-      preparedStatement.setString(1, username);
-      preparedStatement.setString(2, pass);
+      db.preparedStatement.setString(1, username);
+      db.preparedStatement.setString(2, pass);
       
-      rs = preparedStatement.executeQuery();
+      db.rs = db.preparedStatement.executeQuery();
      
-      if (rs.next()) return true;
+      if (db.rs.next()) return true;
       else return false;
     }
     catch (Exception e) {
