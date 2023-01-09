@@ -31,8 +31,7 @@ public class Admin {
       else return false;
     }
     catch (Exception e) {
-      System.out.println(e.getMessage());
+      throw new UnsupportedOperationException("Not connected to Database");
     }
-    return false;
   }
 }
