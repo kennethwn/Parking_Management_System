@@ -1,4 +1,4 @@
-git package com.mycompany.parkingmanagement.logic;
+package com.mycompany.parkingmanagement.logic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
