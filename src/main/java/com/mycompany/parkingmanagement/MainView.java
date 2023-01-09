@@ -5,6 +5,7 @@ import com.mycompany.parkingmanagement.logic.Vehicles.History;
 import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 
 
 public class MainView extends javax.swing.JFrame {
@@ -128,7 +129,6 @@ public class MainView extends javax.swing.JFrame {
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
     setExtendedState(1);
-    setPreferredSize(new java.awt.Dimension(1300, 700));
     setResizable(false);
 
     main_panel.setBackground(new java.awt.Color(255, 255, 255));
@@ -1452,9 +1452,6 @@ public class MainView extends javax.swing.JFrame {
     unboldUncoloredFont(riwayat);
   }//GEN-LAST:event_cta_berandaMouseClicked
 
-  private void totalMobilParkir() {
-    
-  }
   
   private void cta_daftar_kendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_daftar_kendaraanMouseClicked
     // Logic
@@ -1462,8 +1459,15 @@ public class MainView extends javax.swing.JFrame {
     int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
     int motor_parkir = vehicle_list.getUnemptySlot("Motor");
     
-    total_mobil_parkir.setText(String.valueOf(mobil_parkir));
-    total_motor_parkir.setText(String.valueOf(motor_parkir));
+    if (mobil_parkir == -1 || motor_parkir == -1) {
+      throw new UnsupportedOperationException("Not connected to Database");
+    }
+    else {
+      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+      total_motor_parkir.setText(String.valueOf(motor_parkir));
+    }
+    
+    //vehicle_list.displayData();
     
     // Style
     boldColoredFont(daftar_kendaraan);
@@ -1623,7 +1627,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JScrollPane jScrollPane4;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
-  private javax.swing.JTable jTable1;
+  public static javax.swing.JTable jTable1;
   private javax.swing.JTable jTable2;
   private javax.swing.JLabel jumlah_kosong;
   private javax.swing.JLabel jumlah_kosong2;
