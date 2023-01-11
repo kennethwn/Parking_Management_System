@@ -663,10 +663,7 @@ public class MainView extends javax.swing.JFrame {
 
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null},
-        {null, null, null, null}
+
       },
       new String [] {
         "No Polisi", "Tipe", "Merk", "Jam Masuk"
@@ -1454,25 +1451,25 @@ public class MainView extends javax.swing.JFrame {
 
   
   private void cta_daftar_kendaraanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_daftar_kendaraanMouseClicked
-    // Logic
-    cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
-    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
-    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
-    
-    if (mobil_parkir == -1 || motor_parkir == -1) {
-      throw new UnsupportedOperationException("Not connected to Database");
-    }
-    else {
-      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
-      total_motor_parkir.setText(String.valueOf(motor_parkir));
-    }
-    
-    //vehicle_list.displayData();
-    
     // Style
     boldColoredFont(daftar_kendaraan);
     unboldUncoloredFont(riwayat);
     unboldUncoloredFont(beranda);
+
+    // Logic
+    cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
+//    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
+//    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
+//    
+//    if (mobil_parkir == -1 || motor_parkir == -1) {
+//      throw new UnsupportedOperationException("Not connected to Database");
+//    }
+//    else {
+//      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+//      total_motor_parkir.setText(String.valueOf(motor_parkir));
+//    }
+    
+    vehicle_list.displayData(jTable1);
   }//GEN-LAST:event_cta_daftar_kendaraanMouseClicked
 
   private void cta_riwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_riwayatMouseClicked
