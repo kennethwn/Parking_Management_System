@@ -1,5 +1,7 @@
 package com.mycompany.parkingmanagement.logic;
 
+import javax.swing.JTable;
+
 public abstract class Vehicle {
   protected String license_plate;
   protected String vehicle_type;
@@ -23,7 +25,7 @@ public abstract class Vehicle {
   protected void setVehicleBrand(String vehicle_brand) {this.vehicle_brand = vehicle_brand;}
   protected void setTimeEntry(String time_entry) {this.time_entry = time_entry;}
   
-  protected abstract void displayData();
+  protected abstract void displayData(JTable table);
   
   public int getEmptySlot(String type, int total_slot) {
     try {
