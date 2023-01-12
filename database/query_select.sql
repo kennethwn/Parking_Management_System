@@ -138,7 +138,7 @@ where tipe_kendaraan IN ('Bus', 'Truk') AND (jam_keluar is null AND status_payme
 
 -- uji 13
 SELECT 
-	kendaraan.nopol as Nomor_Polisi,
+	kendaraan.nopol as No_Polisi,
     tipe_kendaraan as Tipe,
     merk as Merk,
     jam_masuk as Jam_Masuk,
