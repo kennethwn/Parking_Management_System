@@ -15,14 +15,14 @@ public class Database {
   
   public PreparedStatement preparedStatement;
   public Statement st;
-  public Connection connector;
+  public Connection connector = null;
   public ResultSet rs;
   
   // Prepared Statement
   public static Connection getConnection() {
     if(connect == null) {
       try {
-        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         connect = DriverManager.getConnection(url,user,pw);
       }
       catch(Exception e) {
