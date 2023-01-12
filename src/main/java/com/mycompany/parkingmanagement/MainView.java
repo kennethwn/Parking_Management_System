@@ -4,11 +4,15 @@ import com.mycompany.parkingmanagement.logic.Vehicles.Dashboard;
 import com.mycompany.parkingmanagement.logic.Vehicles.History;
 import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
 import java.awt.Color;
+import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 
 public class MainView extends javax.swing.JFrame {
+  private boolean flag1 = false;
+  private boolean flag2 = false;
+  
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
   
@@ -23,7 +27,6 @@ public class MainView extends javax.swing.JFrame {
     setTitle("Parking Management System");
     setLocationRelativeTo(null);
     setResizable(false);
-    //setExtendedState(JFrame.MAXIMIZED_BOTH); 
   }
 
   @SuppressWarnings("unchecked")
@@ -95,7 +98,7 @@ public class MainView extends javax.swing.JFrame {
     table_riwayat_title_panel = new javax.swing.JPanel();
     table_riwayat_title = new javax.swing.JLabel();
     jScrollPane4 = new javax.swing.JScrollPane();
-    jTable2 = new javax.swing.JTable();
+    table_riwayat = new javax.swing.JTable();
     search_panel = new javax.swing.JPanel();
     search_textfield = new javax.swing.JTextField();
     cta_search = new javax.swing.JButton();
@@ -870,22 +873,19 @@ public class MainView extends javax.swing.JFrame {
 
     jScrollPane4.setBackground(new java.awt.Color(255, 255, 255));
 
-    jTable2.setModel(new javax.swing.table.DefaultTableModel(
+    table_riwayat.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null}
+
       },
       new String [] {
-        "Tanggal Keluar", "No Polisi", "Tipe ", "Merk", "Jam Masuk", "Jam Keluar"
+        "No Polisi", "Tipe ", "Merk", "Jam Masuk", "Jam Keluar"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false, false
+        false, false, false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -896,15 +896,14 @@ public class MainView extends javax.swing.JFrame {
         return canEdit [columnIndex];
       }
     });
-    jTable2.getTableHeader().setReorderingAllowed(false);
-    jScrollPane4.setViewportView(jTable2);
-    if (jTable2.getColumnModel().getColumnCount() > 0) {
-      jTable2.getColumnModel().getColumn(0).setResizable(false);
-      jTable2.getColumnModel().getColumn(1).setResizable(false);
-      jTable2.getColumnModel().getColumn(2).setResizable(false);
-      jTable2.getColumnModel().getColumn(3).setResizable(false);
-      jTable2.getColumnModel().getColumn(4).setResizable(false);
-      jTable2.getColumnModel().getColumn(5).setResizable(false);
+    table_riwayat.getTableHeader().setReorderingAllowed(false);
+    jScrollPane4.setViewportView(table_riwayat);
+    if (table_riwayat.getColumnModel().getColumnCount() > 0) {
+      table_riwayat.getColumnModel().getColumn(0).setResizable(false);
+      table_riwayat.getColumnModel().getColumn(1).setResizable(false);
+      table_riwayat.getColumnModel().getColumn(2).setResizable(false);
+      table_riwayat.getColumnModel().getColumn(3).setResizable(false);
+      table_riwayat.getColumnModel().getColumn(4).setResizable(false);
     }
 
     javax.swing.GroupLayout table_riwayat_panelLayout = new javax.swing.GroupLayout(table_riwayat_panel);
@@ -1458,25 +1457,30 @@ public class MainView extends javax.swing.JFrame {
 
     // Logic
     cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
-//    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
-//    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
-//    
-//    if (mobil_parkir == -1 || motor_parkir == -1) {
-//      throw new UnsupportedOperationException("Not connected to Database");
-//    }
-//    else {
-//      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
-//      total_motor_parkir.setText(String.valueOf(motor_parkir));
-//    }
+    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
+    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
     
-    vehicle_list.displayData(jTable1);
+    total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+    total_motor_parkir.setText(String.valueOf(motor_parkir));
+    
+    if (flag1 != true) {
+      vehicle_list.displayData(jTable1);
+      flag1 = true;
+    }
   }//GEN-LAST:event_cta_daftar_kendaraanMouseClicked
 
   private void cta_riwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_riwayatMouseClicked
-    cta_button.changePanel(feature_panel, history_panel);
+    // Style
     boldColoredFont(riwayat);
     unboldUncoloredFont(daftar_kendaraan);
     unboldUncoloredFont(beranda);
+    
+    // Logic
+    cta_button.changePanel(feature_panel, history_panel);
+    if (flag2 != true) {
+      history.displayData(table_riwayat);
+      flag2 = true;
+    }
   }//GEN-LAST:event_cta_riwayatMouseClicked
 
   private void boldColoredFont(JLabel _text) {
@@ -1625,7 +1629,6 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
   public static javax.swing.JTable jTable1;
-  private javax.swing.JTable jTable2;
   private javax.swing.JLabel jumlah_kosong;
   private javax.swing.JLabel jumlah_kosong2;
   private javax.swing.JLabel jumlah_terisi;
@@ -1670,6 +1673,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel status_panel;
   private javax.swing.JLabel status_title;
   private javax.swing.JPanel table_panel;
+  private javax.swing.JTable table_riwayat;
   private javax.swing.JPanel table_riwayat_panel;
   private javax.swing.JLabel table_riwayat_title;
   private javax.swing.JPanel table_riwayat_title_panel;
