@@ -19,7 +19,7 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
       db.connector = Database.getConnection2();
       db.st = db.connector.createStatement();
       
-      String sql = "SELECT \n" +
+      super.sql = "SELECT \n" +
                 "kendaraan.nopol as No_Polisi,\n" +
                 "tipe_kendaraan as Tipe,\n" +
                 "merk as Merk,\n" +
@@ -40,13 +40,16 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
         setVehicleBrand(db.rs.getString("Merk"));
         setTimeEntry(String.valueOf(db.rs.getTime("Jam_Masuk")));
         
-        String tbData[] = {license_plate,vehicle_type,vehicle_brand,time_entry};
+        String tbData[] = {
+          super.license_plate,
+          super.vehicle_type,
+          super.vehicle_brand,
+          super.time_entry
+        };
         
         DefaultTableModel tbModel = (DefaultTableModel)table.getModel();
         tbModel.addRow(tbData);
       }
-      
-      db.connector.close();
     }
     catch (SQLException e) {
       System.out.println(e.getMessage());
