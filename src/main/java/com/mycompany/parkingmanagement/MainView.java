@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 public class MainView extends javax.swing.JFrame {
   private boolean flag1 = false;
   private boolean flag2 = false;
-  
+   
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
   
@@ -642,7 +642,6 @@ public class MainView extends javax.swing.JFrame {
 
     num_jumlah_kendaraan.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
     num_jumlah_kendaraan.setForeground(new java.awt.Color(255, 0, 0));
-    num_jumlah_kendaraan.setText("30");
 
     javax.swing.GroupLayout table_title_panelLayout = new javax.swing.GroupLayout(table_title_panel);
     table_title_panel.setLayout(table_title_panelLayout);
@@ -929,6 +928,11 @@ public class MainView extends javax.swing.JFrame {
     search_textfield.setForeground(new java.awt.Color(149, 149, 149));
     search_textfield.setText("No Polisi");
     search_textfield.setBorder(null);
+    search_textfield.addFocusListener(new java.awt.event.FocusAdapter() {
+      public void focusGained(java.awt.event.FocusEvent evt) {
+        search_textfieldFocusGained(evt);
+      }
+    });
 
     javax.swing.GroupLayout search_panelLayout = new javax.swing.GroupLayout(search_panel);
     search_panel.setLayout(search_panelLayout);
@@ -1457,13 +1461,18 @@ public class MainView extends javax.swing.JFrame {
 
     // Logic
     cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
-    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
-    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
-    
-    total_mobil_parkir.setText(String.valueOf(mobil_parkir));
-    total_motor_parkir.setText(String.valueOf(motor_parkir));
     
     if (flag1 != true) {
+      int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
+      int motor_parkir = vehicle_list.getUnemptySlot("Motor");
+      int lainnya_parkir = vehicle_list.getUnemptySlot("Lainnya");
+      int total_vehicle = vehicle_list.getTotalVehicle();
+
+      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+      total_motor_parkir.setText(String.valueOf(motor_parkir));
+      total_lainnya_parkir.setText(String.valueOf(lainnya_parkir));
+      num_jumlah_kendaraan.setText(String.valueOf(total_vehicle));
+      
       vehicle_list.displayData(jTable1);
       flag1 = true;
     }
@@ -1566,6 +1575,10 @@ public class MainView extends javax.swing.JFrame {
   private void cta_button_return_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMouseReleased
     cta_button.changeColor(cta_button_return_beranda, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_return_berandaMouseReleased
+
+  private void search_textfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_search_textfieldFocusGained
+    search_textfield.setText("");
+  }//GEN-LAST:event_search_textfieldFocusGained
 
   
   public static void main(String args[]) {
