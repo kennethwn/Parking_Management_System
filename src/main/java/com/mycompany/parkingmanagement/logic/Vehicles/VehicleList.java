@@ -32,7 +32,7 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
                 "inner join status_payment on kendaraan_payment.id_status_payment = status_payment.id_status_payment\n" +
                 "where kendaraan.jam_keluar is null AND status_payment.id_status_payment = 'BL';";
       
-      db.rs = db.st.executeQuery(sql);
+      db.rs = db.st.executeQuery(super.sql);
       
       while(db.rs.next()) {
         setLicensePlate(db.rs.getString("No_Polisi"));
