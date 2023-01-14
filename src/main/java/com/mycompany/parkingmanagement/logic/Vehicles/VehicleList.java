@@ -8,10 +8,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
   private static int count;
-  
-  public static int getAllUnemptySlot() {
-    return count;
-  }
 
   @Override
   public void displayData(JTable table) {
@@ -57,5 +53,28 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
     catch (SQLException e) {
       System.out.println(e.getMessage());
     }
+  }
+  
+  public int getTotalVehicle() {
+    try {
+      db.connector = Database.getConnection2();
+      db.st = db.connector.createStatement();
+      
+      this.sql = "SELECT\n" +
+        "COUNT(kendaraan.nopol) as kendaraan_parkir\n" +
+        "FROM kendaraan_payment\n" +
+        "inner join kendaraan on kendaraan_payment.nopol = kendaraan.nopol\n" +
+        "inner join jenis_kendaraan on kendaraan.id_jenis_kendaraan = jenis_kendaraan.id_jenis_kendaraan\n" +
+        "inner join status_payment on kendaraan_payment.id_status_payment = status_payment.id_status_payment\n" +
+        "where tipe_kendaraan in ('Mobil','Motor', 'Truk','Bus') \n" +
+        "AND (jam_keluar is null AND status_payment.id_status_payment = 'BL');";
+      
+      db.rs = db.st.executeQuery(this.sql);
+      if (db.rs.next()) {this.count = db.rs.getInt("kendaraan_parkir");}
+    }
+    catch (Exception e) {
+      return -1;
+    }
+    return this.count;
   }
 }
