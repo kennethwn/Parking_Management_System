@@ -1560,6 +1560,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="payment_panel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card7"/>
@@ -1620,7 +1625,8 @@
                           </Border>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="6" rowCount="4">
+                          <Table columnCount="7" rowCount="4">
+                            <Column editable="false" title="Tanggal Parkir" type="java.lang.String"/>
                             <Column editable="false" title="Nomor Polisi" type="java.lang.String"/>
                             <Column editable="false" title="Tipe " type="java.lang.String"/>
                             <Column editable="false" title="Status" type="java.lang.String"/>
@@ -1631,6 +1637,11 @@
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>
@@ -2266,6 +2277,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="validated_panel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card6"/>
@@ -2321,7 +2337,8 @@
                           </Border>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="6" rowCount="4">
+                          <Table columnCount="7" rowCount="4">
+                            <Column editable="false" title="Tanggal Parkir" type="java.lang.String"/>
                             <Column editable="false" title="Nomor Polisi" type="java.lang.String"/>
                             <Column editable="false" title="Tipe " type="java.lang.String"/>
                             <Column editable="false" title="Status" type="java.lang.String"/>
@@ -2332,6 +2349,11 @@
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
                             <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                               <Title/>
                               <Editor/>

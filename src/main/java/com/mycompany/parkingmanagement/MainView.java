@@ -1051,24 +1051,26 @@ public class MainView extends javax.swing.JFrame {
 
     feature_panel.add(history_panel, "card4");
 
+    payment_panel.setBackground(new java.awt.Color(255, 255, 255));
+
     table_status_payment2.setBackground(new java.awt.Color(255, 255, 255));
     table_status_payment2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     table_status_payment2.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null}
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null}
       },
       new String [] {
-        "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
+        "Tanggal Parkir", "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false, false
+        false, false, false, false, false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -1089,6 +1091,7 @@ public class MainView extends javax.swing.JFrame {
       table_status_payment2.getColumnModel().getColumn(3).setResizable(false);
       table_status_payment2.getColumnModel().getColumn(4).setResizable(false);
       table_status_payment2.getColumnModel().getColumn(5).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(6).setResizable(false);
     }
 
     cta_button_validate1.setBackground(new java.awt.Color(75, 86, 210));
@@ -1445,24 +1448,26 @@ public class MainView extends javax.swing.JFrame {
 
     feature_panel.add(payment_panel, "card7");
 
+    validated_panel.setBackground(new java.awt.Color(255, 255, 255));
+
     table_status_payment3.setBackground(new java.awt.Color(255, 255, 255));
     table_status_payment3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     table_status_payment3.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null},
-        {null, null, null, null, null, null}
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null}
       },
       new String [] {
-        "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
+        "Tanggal Parkir", "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false, false
+        false, false, false, false, false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -1483,6 +1488,7 @@ public class MainView extends javax.swing.JFrame {
       table_status_payment3.getColumnModel().getColumn(3).setResizable(false);
       table_status_payment3.getColumnModel().getColumn(4).setResizable(false);
       table_status_payment3.getColumnModel().getColumn(5).setResizable(false);
+      table_status_payment3.getColumnModel().getColumn(6).setResizable(false);
     }
 
     cta_button_to_beranda.setBackground(new java.awt.Color(75, 86, 210));
