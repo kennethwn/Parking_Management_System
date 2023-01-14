@@ -2,8 +2,10 @@ package com.mycompany.parkingmanagement.logic;
 
 import java.sql.SQLException;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public abstract class Vehicle {
+  protected String date;
   protected String license_plate;
   protected String vehicle_type;
   protected String vehicle_brand;
@@ -17,12 +19,14 @@ public abstract class Vehicle {
   
   
   // Methods
+  protected String getDate() {return this.date;}
   protected String getLicensePlate() {return this.license_plate;}
   protected String getVehicleType() {return this.vehicle_type;}
   protected String getVehicleBrand() {return this.vehicle_brand;}
   protected String getTimeEntry() {return this.time_entry;}
   protected String getTimeExit() {return this.time_exit;}
   
+  protected void setDate(String date) {this.date = date;}
   protected void setLicensePlate(String license_plate) {this.license_plate = license_plate;}
   protected void setVehicleType(String vehicle_type) {this.vehicle_type = vehicle_type;}
   protected void setVehicleBrand(String vehicle_brand) {this.vehicle_brand = vehicle_brand;}
@@ -91,5 +95,10 @@ public abstract class Vehicle {
       return -1;
     }
     return this.count;
+  }
+  
+  public static void clearTableContent(JTable table) {
+    DefaultTableModel tbModel = (DefaultTableModel)table.getModel();
+    tbModel.setRowCount(0);
   }
 }

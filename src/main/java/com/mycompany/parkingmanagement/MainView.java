@@ -1,5 +1,6 @@
 package com.mycompany.parkingmanagement;
 
+import com.mycompany.parkingmanagement.logic.Vehicle;
 import com.mycompany.parkingmanagement.logic.Vehicles.Dashboard;
 import com.mycompany.parkingmanagement.logic.Vehicles.History;
 import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
@@ -10,8 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class MainView extends javax.swing.JFrame {
-  private boolean flag1 = false;
-  private boolean flag2 = false;
+  private boolean flag = false;
    
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
@@ -72,7 +72,9 @@ public class MainView extends javax.swing.JFrame {
     cta_button_next = new javax.swing.JPanel();
     cta_next = new javax.swing.JLabel();
     pic_1 = new javax.swing.JPanel();
+    label_pic1 = new javax.swing.JLabel();
     pic_2 = new javax.swing.JPanel();
+    label_pic2 = new javax.swing.JLabel();
     daftar_kendaraan_panel = new javax.swing.JPanel();
     table_panel = new javax.swing.JPanel();
     table_title_panel = new javax.swing.JPanel();
@@ -103,31 +105,69 @@ public class MainView extends javax.swing.JFrame {
     search_textfield = new javax.swing.JTextField();
     cta_search = new javax.swing.JButton();
     payment_panel = new javax.swing.JPanel();
-    kosong_panel = new javax.swing.JPanel();
-    kosong_title_panel = new javax.swing.JPanel();
-    kosong_title = new javax.swing.JLabel();
-    jumlah_kosong = new javax.swing.JLabel();
-    terisi_panel = new javax.swing.JPanel();
-    terisi_title_panel = new javax.swing.JPanel();
-    terisit_title = new javax.swing.JLabel();
-    jumlah_terisi = new javax.swing.JLabel();
-    jScrollPane1 = new javax.swing.JScrollPane();
-    table_status_payment1 = new javax.swing.JTable();
-    cta_button_validate = new javax.swing.JPanel();
-    cta_validate = new javax.swing.JLabel();
+    jScrollPane5 = new javax.swing.JScrollPane();
+    table_status_payment2 = new javax.swing.JTable();
+    cta_button_validate1 = new javax.swing.JPanel();
+    cta_validate1 = new javax.swing.JLabel();
+    panel_count3 = new javax.swing.JPanel();
+    panel_count_title_3 = new javax.swing.JPanel();
+    title_mobil2 = new javax.swing.JLabel();
+    title_motor2 = new javax.swing.JLabel();
+    title_truk_3 = new javax.swing.JLabel();
+    title_bus2 = new javax.swing.JLabel();
+    panel_terisi_3 = new javax.swing.JPanel();
+    title_terisi_3 = new javax.swing.JLabel();
+    panel_kosong_3 = new javax.swing.JPanel();
+    title_kosong_3 = new javax.swing.JLabel();
+    panel_number2 = new javax.swing.JPanel();
+    mobil_terisi_3 = new javax.swing.JPanel();
+    mobil_terisi_label2 = new javax.swing.JLabel();
+    mobil_kosong_3 = new javax.swing.JPanel();
+    mobil_kosong_label2 = new javax.swing.JLabel();
+    motor_terisi_3 = new javax.swing.JPanel();
+    motor_terisi_label2 = new javax.swing.JLabel();
+    motor_kosong_3 = new javax.swing.JPanel();
+    motor_kosong_label2 = new javax.swing.JLabel();
+    truk_terisi_3 = new javax.swing.JPanel();
+    truk_terisi_label2 = new javax.swing.JLabel();
+    truk_kosong_3 = new javax.swing.JPanel();
+    truk_kosong_label2 = new javax.swing.JLabel();
+    bus_terisi_3 = new javax.swing.JPanel();
+    bus_terisi_label2 = new javax.swing.JLabel();
+    bus_kosong_3 = new javax.swing.JPanel();
+    bus_kosong_label2 = new javax.swing.JLabel();
     validated_panel = new javax.swing.JPanel();
-    kosong_panel2 = new javax.swing.JPanel();
-    kosong_title_panel2 = new javax.swing.JPanel();
-    kosong_title1 = new javax.swing.JLabel();
-    jumlah_kosong2 = new javax.swing.JLabel();
-    terisi_panel2 = new javax.swing.JPanel();
-    terisi_title_panel2 = new javax.swing.JPanel();
-    terisit_title2 = new javax.swing.JLabel();
-    jumlah_terisi2 = new javax.swing.JLabel();
-    jScrollPane3 = new javax.swing.JScrollPane();
+    jScrollPane7 = new javax.swing.JScrollPane();
     table_status_payment3 = new javax.swing.JTable();
-    cta_button_return_beranda = new javax.swing.JPanel();
-    cta_return_beranda = new javax.swing.JLabel();
+    cta_button_to_beranda = new javax.swing.JPanel();
+    cta_to_beranda = new javax.swing.JLabel();
+    panel_count5 = new javax.swing.JPanel();
+    panel_count_title_5 = new javax.swing.JPanel();
+    title_mobil4 = new javax.swing.JLabel();
+    title_motor4 = new javax.swing.JLabel();
+    title_truk_5 = new javax.swing.JLabel();
+    title_bus4 = new javax.swing.JLabel();
+    panel_terisi_5 = new javax.swing.JPanel();
+    title_terisi_5 = new javax.swing.JLabel();
+    panel_kosong_5 = new javax.swing.JPanel();
+    title_kosong_5 = new javax.swing.JLabel();
+    panel_number4 = new javax.swing.JPanel();
+    mobil_terisi_5 = new javax.swing.JPanel();
+    mobil_terisi_label4 = new javax.swing.JLabel();
+    mobil_kosong_5 = new javax.swing.JPanel();
+    mobil_kosong_label4 = new javax.swing.JLabel();
+    motor_terisi_5 = new javax.swing.JPanel();
+    motor_terisi_label4 = new javax.swing.JLabel();
+    motor_kosong_5 = new javax.swing.JPanel();
+    motor_kosong_label4 = new javax.swing.JLabel();
+    truk_terisi_5 = new javax.swing.JPanel();
+    truk_terisi_label4 = new javax.swing.JLabel();
+    truk_kosong_5 = new javax.swing.JPanel();
+    truk_kosong_label4 = new javax.swing.JLabel();
+    bus_terisi_5 = new javax.swing.JPanel();
+    bus_terisi_label4 = new javax.swing.JLabel();
+    bus_kosong_5 = new javax.swing.JPanel();
+    bus_kosong_label4 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
@@ -577,26 +617,40 @@ public class MainView extends javax.swing.JFrame {
         .addGap(0, 31, Short.MAX_VALUE))
     );
 
+    pic_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    label_pic1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+    label_pic1.setForeground(new java.awt.Color(102, 102, 102));
+    label_pic1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    label_pic1.setText("Coming Soon");
+
     javax.swing.GroupLayout pic_1Layout = new javax.swing.GroupLayout(pic_1);
     pic_1.setLayout(pic_1Layout);
     pic_1Layout.setHorizontalGroup(
       pic_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 0, Short.MAX_VALUE)
+      .addComponent(label_pic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     pic_1Layout.setVerticalGroup(
       pic_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 278, Short.MAX_VALUE)
+      .addComponent(label_pic1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
     );
+
+    pic_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    label_pic2.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+    label_pic2.setForeground(new java.awt.Color(102, 102, 102));
+    label_pic2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    label_pic2.setText("Coming Soon");
 
     javax.swing.GroupLayout pic_2Layout = new javax.swing.GroupLayout(pic_2);
     pic_2.setLayout(pic_2Layout);
     pic_2Layout.setHorizontalGroup(
       pic_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 435, Short.MAX_VALUE)
+      .addComponent(label_pic2, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
     );
     pic_2Layout.setVerticalGroup(
       pic_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 0, Short.MAX_VALUE)
+      .addComponent(label_pic2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
 
     javax.swing.GroupLayout beranda_panelLayout = new javax.swing.GroupLayout(beranda_panel);
@@ -611,12 +665,12 @@ public class MainView extends javax.swing.JFrame {
             .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGap(18, 18, 18)
             .addComponent(pic_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addContainerGap(110, Short.MAX_VALUE))
+        .addContainerGap(65, Short.MAX_VALUE))
     );
     beranda_panelLayout.setVerticalGroup(
       beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(beranda_panelLayout.createSequentialGroup()
-        .addContainerGap(14, Short.MAX_VALUE)
+        .addContainerGap(12, Short.MAX_VALUE)
         .addGroup(beranda_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(pic_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(pic_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -668,19 +722,29 @@ public class MainView extends javax.swing.JFrame {
 
       },
       new String [] {
-        "No Polisi", "Tipe", "Merk", "Jam Masuk"
+        "Tanggal Parkir", "No Polisi", "Tipe", "Merk", "Jam Masuk"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+      };
+      boolean[] canEdit = new boolean [] {
+        false, true, true, true, true
       };
 
       public Class getColumnClass(int columnIndex) {
         return types [columnIndex];
       }
+
+      public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+      }
     });
     jTable1.getTableHeader().setReorderingAllowed(false);
     jScrollPane2.setViewportView(jTable1);
+    if (jTable1.getColumnModel().getColumnCount() > 0) {
+      jTable1.getColumnModel().getColumn(0).setResizable(false);
+    }
 
     javax.swing.GroupLayout table_panelLayout = new javax.swing.GroupLayout(table_panel);
     table_panel.setLayout(table_panelLayout);
@@ -821,8 +885,8 @@ public class MainView extends javax.swing.JFrame {
     daftar_kendaraan_panel.setLayout(daftar_kendaraan_panelLayout);
     daftar_kendaraan_panelLayout.setHorizontalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(daftar_kendaraan_panelLayout.createSequentialGroup()
+        .addGap(57, 57, 57)
         .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
           .addComponent(table_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addGroup(javax.swing.GroupLayout.Alignment.LEADING, daftar_kendaraan_panelLayout.createSequentialGroup()
@@ -831,19 +895,19 @@ public class MainView extends javax.swing.JFrame {
             .addComponent(motor_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(others_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addGap(60, 60, 60))
+        .addContainerGap(58, Short.MAX_VALUE))
     );
     daftar_kendaraan_panelLayout.setVerticalGroup(
       daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, daftar_kendaraan_panelLayout.createSequentialGroup()
-        .addContainerGap(21, Short.MAX_VALUE)
+      .addGroup(daftar_kendaraan_panelLayout.createSequentialGroup()
+        .addGap(20, 20, 20)
         .addGroup(daftar_kendaraan_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
           .addComponent(mobil_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(motor_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
           .addComponent(others_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addGap(33, 33, 33)
         .addComponent(table_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(69, 69, 69))
+        .addContainerGap(70, Short.MAX_VALUE))
     );
 
     feature_panel.add(daftar_kendaraan_panel, "card3");
@@ -877,14 +941,14 @@ public class MainView extends javax.swing.JFrame {
 
       },
       new String [] {
-        "No Polisi", "Tipe ", "Merk", "Jam Masuk", "Jam Keluar"
+        "Tanggal Parkir", "No Polisi", "Tipe ", "Merk", "Jam Masuk", "Jam Keluar"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
-        false, false, false, false, false
+        false, false, false, false, false, false
       };
 
       public Class getColumnClass(int columnIndex) {
@@ -903,6 +967,7 @@ public class MainView extends javax.swing.JFrame {
       table_riwayat.getColumnModel().getColumn(2).setResizable(false);
       table_riwayat.getColumnModel().getColumn(3).setResizable(false);
       table_riwayat.getColumnModel().getColumn(4).setResizable(false);
+      table_riwayat.getColumnModel().getColumn(5).setResizable(false);
     }
 
     javax.swing.GroupLayout table_riwayat_panelLayout = new javax.swing.GroupLayout(table_riwayat_panel);
@@ -952,6 +1017,11 @@ public class MainView extends javax.swing.JFrame {
     cta_search.setForeground(new java.awt.Color(255, 255, 255));
     cta_search.setText("Search");
     cta_search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    cta_search.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cta_searchActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout history_panelLayout = new javax.swing.GroupLayout(history_panel);
     history_panel.setLayout(history_panelLayout);
@@ -965,7 +1035,7 @@ public class MainView extends javax.swing.JFrame {
             .addGap(18, 18, 18)
             .addComponent(cta_search, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addComponent(table_riwayat_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(96, Short.MAX_VALUE))
+        .addContainerGap(51, Short.MAX_VALUE))
     );
     history_panelLayout.setVerticalGroup(
       history_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -981,91 +1051,9 @@ public class MainView extends javax.swing.JFrame {
 
     feature_panel.add(history_panel, "card4");
 
-    payment_panel.setBackground(new java.awt.Color(255, 255, 255));
-
-    kosong_panel.setBackground(new java.awt.Color(255, 255, 255));
-    kosong_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-    kosong_title_panel.setBackground(new java.awt.Color(75, 86, 210));
-
-    kosong_title.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    kosong_title.setForeground(new java.awt.Color(255, 255, 255));
-    kosong_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    kosong_title.setText("KOSONG");
-
-    javax.swing.GroupLayout kosong_title_panelLayout = new javax.swing.GroupLayout(kosong_title_panel);
-    kosong_title_panel.setLayout(kosong_title_panelLayout);
-    kosong_title_panelLayout.setHorizontalGroup(
-      kosong_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-    );
-    kosong_title_panelLayout.setVerticalGroup(
-      kosong_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-    );
-
-    jumlah_kosong.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
-    jumlah_kosong.setForeground(new java.awt.Color(0, 0, 0));
-    jumlah_kosong.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-    javax.swing.GroupLayout kosong_panelLayout = new javax.swing.GroupLayout(kosong_panel);
-    kosong_panel.setLayout(kosong_panelLayout);
-    kosong_panelLayout.setHorizontalGroup(
-      kosong_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      .addComponent(jumlah_kosong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    kosong_panelLayout.setVerticalGroup(
-      kosong_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(kosong_panelLayout.createSequentialGroup()
-        .addComponent(kosong_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, 0)
-        .addComponent(jumlah_kosong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-
-    terisi_panel.setBackground(new java.awt.Color(255, 255, 255));
-    terisi_panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-    terisi_title_panel.setBackground(new java.awt.Color(75, 86, 210));
-
-    terisit_title.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    terisit_title.setForeground(new java.awt.Color(255, 255, 255));
-    terisit_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    terisit_title.setText("TERISI");
-
-    javax.swing.GroupLayout terisi_title_panelLayout = new javax.swing.GroupLayout(terisi_title_panel);
-    terisi_title_panel.setLayout(terisi_title_panelLayout);
-    terisi_title_panelLayout.setHorizontalGroup(
-      terisi_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisit_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    terisi_title_panelLayout.setVerticalGroup(
-      terisi_title_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisit_title, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-    );
-
-    jumlah_terisi.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
-    jumlah_terisi.setForeground(new java.awt.Color(0, 0, 0));
-    jumlah_terisi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-    javax.swing.GroupLayout terisi_panelLayout = new javax.swing.GroupLayout(terisi_panel);
-    terisi_panel.setLayout(terisi_panelLayout);
-    terisi_panelLayout.setHorizontalGroup(
-      terisi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisi_title_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      .addComponent(jumlah_terisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    terisi_panelLayout.setVerticalGroup(
-      terisi_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(terisi_panelLayout.createSequentialGroup()
-        .addComponent(terisi_title_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, 0)
-        .addComponent(jumlah_terisi, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-    );
-
-    table_status_payment1.setBackground(new java.awt.Color(255, 255, 255));
-    table_status_payment1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-    table_status_payment1.setModel(new javax.swing.table.DefaultTableModel(
+    table_status_payment2.setBackground(new java.awt.Color(255, 255, 255));
+    table_status_payment2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    table_status_payment2.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
         {null, null, null, null, null, null},
         {null, null, null, null, null, null},
@@ -1091,52 +1079,340 @@ public class MainView extends javax.swing.JFrame {
         return canEdit [columnIndex];
       }
     });
-    table_status_payment1.setGridColor(new java.awt.Color(0, 0, 0));
-    table_status_payment1.getTableHeader().setReorderingAllowed(false);
-    jScrollPane1.setViewportView(table_status_payment1);
-    if (table_status_payment1.getColumnModel().getColumnCount() > 0) {
-      table_status_payment1.getColumnModel().getColumn(0).setResizable(false);
-      table_status_payment1.getColumnModel().getColumn(1).setResizable(false);
-      table_status_payment1.getColumnModel().getColumn(2).setResizable(false);
-      table_status_payment1.getColumnModel().getColumn(3).setResizable(false);
-      table_status_payment1.getColumnModel().getColumn(4).setResizable(false);
-      table_status_payment1.getColumnModel().getColumn(5).setResizable(false);
+    table_status_payment2.setGridColor(new java.awt.Color(0, 0, 0));
+    table_status_payment2.getTableHeader().setReorderingAllowed(false);
+    jScrollPane5.setViewportView(table_status_payment2);
+    if (table_status_payment2.getColumnModel().getColumnCount() > 0) {
+      table_status_payment2.getColumnModel().getColumn(0).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(1).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(2).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(3).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(4).setResizable(false);
+      table_status_payment2.getColumnModel().getColumn(5).setResizable(false);
     }
 
-    cta_button_validate.setBackground(new java.awt.Color(75, 86, 210));
-    cta_button_validate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    cta_button_validate.addMouseListener(new java.awt.event.MouseAdapter() {
+    cta_button_validate1.setBackground(new java.awt.Color(75, 86, 210));
+    cta_button_validate1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    cta_button_validate1.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        cta_button_validateMouseClicked(evt);
+        cta_button_validate1MouseClicked(evt);
       }
       public void mouseEntered(java.awt.event.MouseEvent evt) {
-        cta_button_validateMouseEntered(evt);
+        cta_button_validate1MouseEntered(evt);
       }
       public void mouseExited(java.awt.event.MouseEvent evt) {
-        cta_button_validateMouseExited(evt);
+        cta_button_validate1MouseExited(evt);
       }
       public void mousePressed(java.awt.event.MouseEvent evt) {
-        cta_button_validateMousePressed(evt);
+        cta_button_validate1MousePressed(evt);
       }
       public void mouseReleased(java.awt.event.MouseEvent evt) {
-        cta_button_validateMouseReleased(evt);
+        cta_button_validate1MouseReleased(evt);
       }
     });
 
-    cta_validate.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    cta_validate.setForeground(new java.awt.Color(255, 255, 255));
-    cta_validate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    cta_validate.setText("VALIDASI BAYAR");
+    cta_validate1.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    cta_validate1.setForeground(new java.awt.Color(255, 255, 255));
+    cta_validate1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    cta_validate1.setText("VALIDASI BAYAR");
 
-    javax.swing.GroupLayout cta_button_validateLayout = new javax.swing.GroupLayout(cta_button_validate);
-    cta_button_validate.setLayout(cta_button_validateLayout);
-    cta_button_validateLayout.setHorizontalGroup(
-      cta_button_validateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_validate, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+    javax.swing.GroupLayout cta_button_validate1Layout = new javax.swing.GroupLayout(cta_button_validate1);
+    cta_button_validate1.setLayout(cta_button_validate1Layout);
+    cta_button_validate1Layout.setHorizontalGroup(
+      cta_button_validate1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_validate1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
     );
-    cta_button_validateLayout.setVerticalGroup(
-      cta_button_validateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_validate, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    cta_button_validate1Layout.setVerticalGroup(
+      cta_button_validate1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_validate1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    );
+
+    panel_count_title_3.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_mobil2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_mobil2.setForeground(new java.awt.Color(255, 255, 255));
+    title_mobil2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_mobil2.setText("MOBIL");
+
+    title_motor2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_motor2.setForeground(new java.awt.Color(255, 255, 255));
+    title_motor2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_motor2.setText("MOTOR");
+
+    title_truk_3.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_truk_3.setForeground(new java.awt.Color(255, 255, 255));
+    title_truk_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_truk_3.setText("TRUK");
+
+    title_bus2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_bus2.setForeground(new java.awt.Color(255, 255, 255));
+    title_bus2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_bus2.setText("BUS");
+
+    javax.swing.GroupLayout panel_count_title_3Layout = new javax.swing.GroupLayout(panel_count_title_3);
+    panel_count_title_3.setLayout(panel_count_title_3Layout);
+    panel_count_title_3Layout.setHorizontalGroup(
+      panel_count_title_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count_title_3Layout.createSequentialGroup()
+        .addGap(202, 202, 202)
+        .addComponent(title_mobil2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_motor2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_truk_3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_bus2, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
+    );
+    panel_count_title_3Layout.setVerticalGroup(
+      panel_count_title_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count_title_3Layout.createSequentialGroup()
+        .addGap(0, 0, 0)
+        .addGroup(panel_count_title_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(title_mobil2, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+          .addComponent(title_motor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(title_truk_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(title_bus2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+
+    panel_terisi_3.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_terisi_3.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_terisi_3.setForeground(new java.awt.Color(255, 255, 255));
+    title_terisi_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_terisi_3.setText("TERISI");
+
+    javax.swing.GroupLayout panel_terisi_3Layout = new javax.swing.GroupLayout(panel_terisi_3);
+    panel_terisi_3.setLayout(panel_terisi_3Layout);
+    panel_terisi_3Layout.setHorizontalGroup(
+      panel_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_terisi_3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+    );
+    panel_terisi_3Layout.setVerticalGroup(
+      panel_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_terisi_3, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+    );
+
+    panel_kosong_3.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_kosong_3.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_kosong_3.setForeground(new java.awt.Color(255, 255, 255));
+    title_kosong_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_kosong_3.setText("KOSONG");
+
+    javax.swing.GroupLayout panel_kosong_3Layout = new javax.swing.GroupLayout(panel_kosong_3);
+    panel_kosong_3.setLayout(panel_kosong_3Layout);
+    panel_kosong_3Layout.setHorizontalGroup(
+      panel_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+    );
+    panel_kosong_3Layout.setVerticalGroup(
+      panel_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+    );
+
+    mobil_terisi_3.setBackground(new java.awt.Color(255, 255, 255));
+    mobil_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    mobil_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    mobil_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout mobil_terisi_3Layout = new javax.swing.GroupLayout(mobil_terisi_3);
+    mobil_terisi_3.setLayout(mobil_terisi_3Layout);
+    mobil_terisi_3Layout.setHorizontalGroup(
+      mobil_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    mobil_terisi_3Layout.setVerticalGroup(
+      mobil_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    mobil_kosong_3.setBackground(new java.awt.Color(255, 255, 255));
+    mobil_kosong_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    mobil_kosong_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    mobil_kosong_label2.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_kosong_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout mobil_kosong_3Layout = new javax.swing.GroupLayout(mobil_kosong_3);
+    mobil_kosong_3.setLayout(mobil_kosong_3Layout);
+    mobil_kosong_3Layout.setHorizontalGroup(
+      mobil_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    mobil_kosong_3Layout.setVerticalGroup(
+      mobil_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    motor_terisi_3.setBackground(new java.awt.Color(255, 255, 255));
+    motor_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    motor_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    motor_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    motor_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout motor_terisi_3Layout = new javax.swing.GroupLayout(motor_terisi_3);
+    motor_terisi_3.setLayout(motor_terisi_3Layout);
+    motor_terisi_3Layout.setHorizontalGroup(
+      motor_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    motor_terisi_3Layout.setVerticalGroup(
+      motor_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    motor_kosong_3.setBackground(new java.awt.Color(255, 255, 255));
+    motor_kosong_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    motor_kosong_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    motor_kosong_label2.setForeground(new java.awt.Color(0, 0, 0));
+    motor_kosong_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout motor_kosong_3Layout = new javax.swing.GroupLayout(motor_kosong_3);
+    motor_kosong_3.setLayout(motor_kosong_3Layout);
+    motor_kosong_3Layout.setHorizontalGroup(
+      motor_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    motor_kosong_3Layout.setVerticalGroup(
+      motor_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    truk_terisi_3.setBackground(new java.awt.Color(255, 255, 255));
+    truk_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    truk_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    truk_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    truk_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout truk_terisi_3Layout = new javax.swing.GroupLayout(truk_terisi_3);
+    truk_terisi_3.setLayout(truk_terisi_3Layout);
+    truk_terisi_3Layout.setHorizontalGroup(
+      truk_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    truk_terisi_3Layout.setVerticalGroup(
+      truk_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    truk_kosong_3.setBackground(new java.awt.Color(255, 255, 255));
+    truk_kosong_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    truk_kosong_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    truk_kosong_label2.setForeground(new java.awt.Color(0, 0, 0));
+    truk_kosong_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout truk_kosong_3Layout = new javax.swing.GroupLayout(truk_kosong_3);
+    truk_kosong_3.setLayout(truk_kosong_3Layout);
+    truk_kosong_3Layout.setHorizontalGroup(
+      truk_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    truk_kosong_3Layout.setVerticalGroup(
+      truk_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    bus_terisi_3.setBackground(new java.awt.Color(255, 255, 255));
+    bus_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    bus_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    bus_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    bus_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout bus_terisi_3Layout = new javax.swing.GroupLayout(bus_terisi_3);
+    bus_terisi_3.setLayout(bus_terisi_3Layout);
+    bus_terisi_3Layout.setHorizontalGroup(
+      bus_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    bus_terisi_3Layout.setVerticalGroup(
+      bus_terisi_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_terisi_label2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+    );
+
+    bus_kosong_3.setBackground(new java.awt.Color(255, 255, 255));
+    bus_kosong_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    bus_kosong_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    bus_kosong_label2.setForeground(new java.awt.Color(0, 0, 0));
+    bus_kosong_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout bus_kosong_3Layout = new javax.swing.GroupLayout(bus_kosong_3);
+    bus_kosong_3.setLayout(bus_kosong_3Layout);
+    bus_kosong_3Layout.setHorizontalGroup(
+      bus_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    bus_kosong_3Layout.setVerticalGroup(
+      bus_kosong_3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_kosong_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    javax.swing.GroupLayout panel_number2Layout = new javax.swing.GroupLayout(panel_number2);
+    panel_number2.setLayout(panel_number2Layout);
+    panel_number2Layout.setHorizontalGroup(
+      panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_number2Layout.createSequentialGroup()
+        .addGroup(panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addGroup(panel_number2Layout.createSequentialGroup()
+            .addComponent(mobil_kosong_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(motor_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addGroup(panel_number2Layout.createSequentialGroup()
+            .addComponent(mobil_terisi_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(motor_terisi_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addGroup(panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(truk_terisi_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGap(0, 0, 0)
+        .addGroup(panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(bus_terisi_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(bus_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+    panel_number2Layout.setVerticalGroup(
+      panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_number2Layout.createSequentialGroup()
+        .addGroup(panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addComponent(bus_terisi_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(mobil_terisi_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(motor_terisi_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_terisi_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGroup(panel_number2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(mobil_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(motor_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(bus_kosong_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+
+    javax.swing.GroupLayout panel_count3Layout = new javax.swing.GroupLayout(panel_count3);
+    panel_count3.setLayout(panel_count3Layout);
+    panel_count3Layout.setHorizontalGroup(
+      panel_count3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(panel_count_title_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(panel_count3Layout.createSequentialGroup()
+        .addGroup(panel_count3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(panel_terisi_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(panel_kosong_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(0, 0, 0)
+        .addComponent(panel_number2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    panel_count3Layout.setVerticalGroup(
+      panel_count3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count3Layout.createSequentialGroup()
+        .addComponent(panel_count_title_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(panel_count3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(panel_count3Layout.createSequentialGroup()
+            .addComponent(panel_terisi_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(panel_kosong_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(panel_number2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
     );
 
     javax.swing.GroupLayout payment_panelLayout = new javax.swing.GroupLayout(payment_panel);
@@ -1147,114 +1423,27 @@ public class MainView extends javax.swing.JFrame {
         .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(payment_panelLayout.createSequentialGroup()
             .addGap(367, 367, 367)
-            .addComponent(cta_button_validate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(cta_button_validate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(payment_panelLayout.createSequentialGroup()
             .addGap(60, 60, 60)
             .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGroup(payment_panelLayout.createSequentialGroup()
-                .addComponent(kosong_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(terisi_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-        .addContainerGap(103, Short.MAX_VALUE))
+              .addComponent(panel_count3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(jScrollPane5))))
+        .addContainerGap(32, Short.MAX_VALUE))
     );
     payment_panelLayout.setVerticalGroup(
       payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(payment_panelLayout.createSequentialGroup()
-        .addGap(48, 48, 48)
-        .addGroup(payment_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(terisi_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(kosong_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        .addGap(34, 34, 34)
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(38, 38, 38)
+        .addComponent(panel_count3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(43, 43, 43)
-        .addComponent(cta_button_validate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(22, Short.MAX_VALUE))
+        .addComponent(cta_button_validate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(34, Short.MAX_VALUE))
     );
 
-    feature_panel.add(payment_panel, "card5");
-
-    validated_panel.setBackground(new java.awt.Color(255, 255, 255));
-
-    kosong_panel2.setBackground(new java.awt.Color(255, 255, 255));
-    kosong_panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-    kosong_title_panel2.setBackground(new java.awt.Color(75, 86, 210));
-
-    kosong_title1.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    kosong_title1.setForeground(new java.awt.Color(255, 255, 255));
-    kosong_title1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    kosong_title1.setText("KOSONG");
-
-    javax.swing.GroupLayout kosong_title_panel2Layout = new javax.swing.GroupLayout(kosong_title_panel2);
-    kosong_title_panel2.setLayout(kosong_title_panel2Layout);
-    kosong_title_panel2Layout.setHorizontalGroup(
-      kosong_title_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title1, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-    );
-    kosong_title_panel2Layout.setVerticalGroup(
-      kosong_title_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-    );
-
-    jumlah_kosong2.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
-    jumlah_kosong2.setForeground(new java.awt.Color(0, 0, 0));
-    jumlah_kosong2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-    javax.swing.GroupLayout kosong_panel2Layout = new javax.swing.GroupLayout(kosong_panel2);
-    kosong_panel2.setLayout(kosong_panel2Layout);
-    kosong_panel2Layout.setHorizontalGroup(
-      kosong_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(kosong_title_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      .addComponent(jumlah_kosong2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    kosong_panel2Layout.setVerticalGroup(
-      kosong_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(kosong_panel2Layout.createSequentialGroup()
-        .addComponent(kosong_title_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, 0)
-        .addComponent(jumlah_kosong2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-
-    terisi_panel2.setBackground(new java.awt.Color(255, 255, 255));
-    terisi_panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-    terisi_title_panel2.setBackground(new java.awt.Color(75, 86, 210));
-
-    terisit_title2.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    terisit_title2.setForeground(new java.awt.Color(255, 255, 255));
-    terisit_title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    terisit_title2.setText("TERISI");
-
-    javax.swing.GroupLayout terisi_title_panel2Layout = new javax.swing.GroupLayout(terisi_title_panel2);
-    terisi_title_panel2.setLayout(terisi_title_panel2Layout);
-    terisi_title_panel2Layout.setHorizontalGroup(
-      terisi_title_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisit_title2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    terisi_title_panel2Layout.setVerticalGroup(
-      terisi_title_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisit_title2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-    );
-
-    jumlah_terisi2.setFont(new java.awt.Font("sansserif", 0, 60)); // NOI18N
-    jumlah_terisi2.setForeground(new java.awt.Color(0, 0, 0));
-    jumlah_terisi2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-    javax.swing.GroupLayout terisi_panel2Layout = new javax.swing.GroupLayout(terisi_panel2);
-    terisi_panel2.setLayout(terisi_panel2Layout);
-    terisi_panel2Layout.setHorizontalGroup(
-      terisi_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(terisi_title_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      .addComponent(jumlah_terisi2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-    terisi_panel2Layout.setVerticalGroup(
-      terisi_panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(terisi_panel2Layout.createSequentialGroup()
-        .addComponent(terisi_title_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, 0)
-        .addComponent(jumlah_terisi2, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-    );
+    feature_panel.add(payment_panel, "card7");
 
     table_status_payment3.setBackground(new java.awt.Color(255, 255, 255));
     table_status_payment3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -1286,7 +1475,7 @@ public class MainView extends javax.swing.JFrame {
     });
     table_status_payment3.setGridColor(new java.awt.Color(0, 0, 0));
     table_status_payment3.getTableHeader().setReorderingAllowed(false);
-    jScrollPane3.setViewportView(table_status_payment3);
+    jScrollPane7.setViewportView(table_status_payment3);
     if (table_status_payment3.getColumnModel().getColumnCount() > 0) {
       table_status_payment3.getColumnModel().getColumn(0).setResizable(false);
       table_status_payment3.getColumnModel().getColumn(1).setResizable(false);
@@ -1296,40 +1485,328 @@ public class MainView extends javax.swing.JFrame {
       table_status_payment3.getColumnModel().getColumn(5).setResizable(false);
     }
 
-    cta_button_return_beranda.setBackground(new java.awt.Color(75, 86, 210));
-    cta_button_return_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-    cta_button_return_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
+    cta_button_to_beranda.setBackground(new java.awt.Color(75, 86, 210));
+    cta_button_to_beranda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    cta_button_to_beranda.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        cta_button_return_berandaMouseClicked(evt);
+        cta_button_to_berandaMouseClicked(evt);
       }
       public void mouseEntered(java.awt.event.MouseEvent evt) {
-        cta_button_return_berandaMouseEntered(evt);
+        cta_button_to_berandaMouseEntered(evt);
       }
       public void mouseExited(java.awt.event.MouseEvent evt) {
-        cta_button_return_berandaMouseExited(evt);
+        cta_button_to_berandaMouseExited(evt);
       }
       public void mousePressed(java.awt.event.MouseEvent evt) {
-        cta_button_return_berandaMousePressed(evt);
+        cta_button_to_berandaMousePressed(evt);
       }
       public void mouseReleased(java.awt.event.MouseEvent evt) {
-        cta_button_return_berandaMouseReleased(evt);
+        cta_button_to_berandaMouseReleased(evt);
       }
     });
 
-    cta_return_beranda.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
-    cta_return_beranda.setForeground(new java.awt.Color(255, 255, 255));
-    cta_return_beranda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    cta_return_beranda.setText("BERANDA");
+    cta_to_beranda.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    cta_to_beranda.setForeground(new java.awt.Color(255, 255, 255));
+    cta_to_beranda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    cta_to_beranda.setText("BERANDA");
 
-    javax.swing.GroupLayout cta_button_return_berandaLayout = new javax.swing.GroupLayout(cta_button_return_beranda);
-    cta_button_return_beranda.setLayout(cta_button_return_berandaLayout);
-    cta_button_return_berandaLayout.setHorizontalGroup(
-      cta_button_return_berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_return_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+    javax.swing.GroupLayout cta_button_to_berandaLayout = new javax.swing.GroupLayout(cta_button_to_beranda);
+    cta_button_to_beranda.setLayout(cta_button_to_berandaLayout);
+    cta_button_to_berandaLayout.setHorizontalGroup(
+      cta_button_to_berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_to_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
     );
-    cta_button_return_berandaLayout.setVerticalGroup(
-      cta_button_return_berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_return_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    cta_button_to_berandaLayout.setVerticalGroup(
+      cta_button_to_berandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(cta_to_beranda, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+    );
+
+    panel_count_title_5.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_mobil4.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_mobil4.setForeground(new java.awt.Color(255, 255, 255));
+    title_mobil4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_mobil4.setText("MOBIL");
+
+    title_motor4.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_motor4.setForeground(new java.awt.Color(255, 255, 255));
+    title_motor4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_motor4.setText("MOTOR");
+
+    title_truk_5.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_truk_5.setForeground(new java.awt.Color(255, 255, 255));
+    title_truk_5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_truk_5.setText("TRUK");
+
+    title_bus4.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_bus4.setForeground(new java.awt.Color(255, 255, 255));
+    title_bus4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_bus4.setText("BUS");
+
+    javax.swing.GroupLayout panel_count_title_5Layout = new javax.swing.GroupLayout(panel_count_title_5);
+    panel_count_title_5.setLayout(panel_count_title_5Layout);
+    panel_count_title_5Layout.setHorizontalGroup(
+      panel_count_title_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count_title_5Layout.createSequentialGroup()
+        .addGap(202, 202, 202)
+        .addComponent(title_mobil4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_motor4, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_truk_5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, 0)
+        .addComponent(title_bus4, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))
+    );
+    panel_count_title_5Layout.setVerticalGroup(
+      panel_count_title_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count_title_5Layout.createSequentialGroup()
+        .addGap(0, 0, 0)
+        .addGroup(panel_count_title_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(title_mobil4, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+          .addComponent(title_motor4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(title_truk_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(title_bus4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+
+    panel_terisi_5.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_terisi_5.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_terisi_5.setForeground(new java.awt.Color(255, 255, 255));
+    title_terisi_5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_terisi_5.setText("TERISI");
+
+    javax.swing.GroupLayout panel_terisi_5Layout = new javax.swing.GroupLayout(panel_terisi_5);
+    panel_terisi_5.setLayout(panel_terisi_5Layout);
+    panel_terisi_5Layout.setHorizontalGroup(
+      panel_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_terisi_5, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+    );
+    panel_terisi_5Layout.setVerticalGroup(
+      panel_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_terisi_5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+    );
+
+    panel_kosong_5.setBackground(new java.awt.Color(75, 86, 210));
+
+    title_kosong_5.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
+    title_kosong_5.setForeground(new java.awt.Color(255, 255, 255));
+    title_kosong_5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    title_kosong_5.setText("KOSONG");
+
+    javax.swing.GroupLayout panel_kosong_5Layout = new javax.swing.GroupLayout(panel_kosong_5);
+    panel_kosong_5.setLayout(panel_kosong_5Layout);
+    panel_kosong_5Layout.setHorizontalGroup(
+      panel_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+    );
+    panel_kosong_5Layout.setVerticalGroup(
+      panel_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(title_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+    );
+
+    mobil_terisi_5.setBackground(new java.awt.Color(255, 255, 255));
+    mobil_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    mobil_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    mobil_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout mobil_terisi_5Layout = new javax.swing.GroupLayout(mobil_terisi_5);
+    mobil_terisi_5.setLayout(mobil_terisi_5Layout);
+    mobil_terisi_5Layout.setHorizontalGroup(
+      mobil_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    mobil_terisi_5Layout.setVerticalGroup(
+      mobil_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    mobil_kosong_5.setBackground(new java.awt.Color(255, 255, 255));
+    mobil_kosong_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    mobil_kosong_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    mobil_kosong_label4.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_kosong_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout mobil_kosong_5Layout = new javax.swing.GroupLayout(mobil_kosong_5);
+    mobil_kosong_5.setLayout(mobil_kosong_5Layout);
+    mobil_kosong_5Layout.setHorizontalGroup(
+      mobil_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    mobil_kosong_5Layout.setVerticalGroup(
+      mobil_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(mobil_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    motor_terisi_5.setBackground(new java.awt.Color(255, 255, 255));
+    motor_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    motor_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    motor_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    motor_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout motor_terisi_5Layout = new javax.swing.GroupLayout(motor_terisi_5);
+    motor_terisi_5.setLayout(motor_terisi_5Layout);
+    motor_terisi_5Layout.setHorizontalGroup(
+      motor_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    motor_terisi_5Layout.setVerticalGroup(
+      motor_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    motor_kosong_5.setBackground(new java.awt.Color(255, 255, 255));
+    motor_kosong_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    motor_kosong_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    motor_kosong_label4.setForeground(new java.awt.Color(0, 0, 0));
+    motor_kosong_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout motor_kosong_5Layout = new javax.swing.GroupLayout(motor_kosong_5);
+    motor_kosong_5.setLayout(motor_kosong_5Layout);
+    motor_kosong_5Layout.setHorizontalGroup(
+      motor_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    motor_kosong_5Layout.setVerticalGroup(
+      motor_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(motor_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    truk_terisi_5.setBackground(new java.awt.Color(255, 255, 255));
+    truk_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    truk_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    truk_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    truk_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout truk_terisi_5Layout = new javax.swing.GroupLayout(truk_terisi_5);
+    truk_terisi_5.setLayout(truk_terisi_5Layout);
+    truk_terisi_5Layout.setHorizontalGroup(
+      truk_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+    );
+    truk_terisi_5Layout.setVerticalGroup(
+      truk_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    truk_kosong_5.setBackground(new java.awt.Color(255, 255, 255));
+    truk_kosong_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    truk_kosong_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    truk_kosong_label4.setForeground(new java.awt.Color(0, 0, 0));
+    truk_kosong_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout truk_kosong_5Layout = new javax.swing.GroupLayout(truk_kosong_5);
+    truk_kosong_5.setLayout(truk_kosong_5Layout);
+    truk_kosong_5Layout.setHorizontalGroup(
+      truk_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    truk_kosong_5Layout.setVerticalGroup(
+      truk_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(truk_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    bus_terisi_5.setBackground(new java.awt.Color(255, 255, 255));
+    bus_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    bus_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    bus_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    bus_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout bus_terisi_5Layout = new javax.swing.GroupLayout(bus_terisi_5);
+    bus_terisi_5.setLayout(bus_terisi_5Layout);
+    bus_terisi_5Layout.setHorizontalGroup(
+      bus_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    bus_terisi_5Layout.setVerticalGroup(
+      bus_terisi_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_terisi_label4, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+    );
+
+    bus_kosong_5.setBackground(new java.awt.Color(255, 255, 255));
+    bus_kosong_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+    bus_kosong_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
+    bus_kosong_label4.setForeground(new java.awt.Color(0, 0, 0));
+    bus_kosong_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+    javax.swing.GroupLayout bus_kosong_5Layout = new javax.swing.GroupLayout(bus_kosong_5);
+    bus_kosong_5.setLayout(bus_kosong_5Layout);
+    bus_kosong_5Layout.setHorizontalGroup(
+      bus_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    bus_kosong_5Layout.setVerticalGroup(
+      bus_kosong_5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(bus_kosong_label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+
+    javax.swing.GroupLayout panel_number4Layout = new javax.swing.GroupLayout(panel_number4);
+    panel_number4.setLayout(panel_number4Layout);
+    panel_number4Layout.setHorizontalGroup(
+      panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_number4Layout.createSequentialGroup()
+        .addGroup(panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addGroup(panel_number4Layout.createSequentialGroup()
+            .addComponent(mobil_kosong_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(motor_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+          .addGroup(panel_number4Layout.createSequentialGroup()
+            .addComponent(mobil_terisi_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(motor_terisi_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addGroup(panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(truk_terisi_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGap(0, 0, 0)
+        .addGroup(panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(bus_terisi_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(bus_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+    panel_number4Layout.setVerticalGroup(
+      panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_number4Layout.createSequentialGroup()
+        .addGroup(panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addComponent(bus_terisi_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(mobil_terisi_5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(motor_terisi_5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_terisi_5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGroup(panel_number4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(mobil_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(motor_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(truk_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+          .addComponent(bus_kosong_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+    );
+
+    javax.swing.GroupLayout panel_count5Layout = new javax.swing.GroupLayout(panel_count5);
+    panel_count5.setLayout(panel_count5Layout);
+    panel_count5Layout.setHorizontalGroup(
+      panel_count5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addComponent(panel_count_title_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addGroup(panel_count5Layout.createSequentialGroup()
+        .addGroup(panel_count5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(panel_terisi_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(panel_kosong_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(0, 0, 0)
+        .addComponent(panel_number4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    panel_count5Layout.setVerticalGroup(
+      panel_count5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(panel_count5Layout.createSequentialGroup()
+        .addComponent(panel_count_title_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGroup(panel_count5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(panel_count5Layout.createSequentialGroup()
+            .addComponent(panel_terisi_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(panel_kosong_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(panel_number4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
     );
 
     javax.swing.GroupLayout validated_panelLayout = new javax.swing.GroupLayout(validated_panel);
@@ -1340,29 +1817,24 @@ public class MainView extends javax.swing.JFrame {
         .addGap(60, 60, 60)
         .addGroup(validated_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(validated_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(validated_panelLayout.createSequentialGroup()
-              .addComponent(kosong_panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(18, 18, 18)
-              .addComponent(terisi_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-          .addComponent(cta_button_return_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(103, Short.MAX_VALUE))
+            .addComponent(panel_count5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane7))
+          .addComponent(cta_button_to_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap(32, Short.MAX_VALUE))
     );
     validated_panelLayout.setVerticalGroup(
       validated_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(validated_panelLayout.createSequentialGroup()
-        .addGap(48, 48, 48)
-        .addGroup(validated_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(terisi_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(kosong_panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        .addGap(34, 34, 34)
-        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(38, 38, 38)
+        .addComponent(panel_count5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addGap(43, 43, 43)
-        .addComponent(cta_button_return_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(22, Short.MAX_VALUE))
+        .addComponent(cta_button_to_beranda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(34, Short.MAX_VALUE))
     );
 
-    feature_panel.add(validated_panel, "card5");
+    feature_panel.add(validated_panel, "card6");
 
     javax.swing.GroupLayout main_panelLayout = new javax.swing.GroupLayout(main_panel);
     main_panel.setLayout(main_panelLayout);
@@ -1462,7 +1934,7 @@ public class MainView extends javax.swing.JFrame {
     // Logic
     cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
     
-    if (flag1 != true) {
+    if (flag != true) {
       int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
       int motor_parkir = vehicle_list.getUnemptySlot("Motor");
       int lainnya_parkir = vehicle_list.getUnemptySlot("Lainnya");
@@ -1474,7 +1946,7 @@ public class MainView extends javax.swing.JFrame {
       num_jumlah_kendaraan.setText(String.valueOf(total_vehicle));
       
       vehicle_list.displayData(jTable1);
-      flag1 = true;
+      flag = true;
     }
   }//GEN-LAST:event_cta_daftar_kendaraanMouseClicked
 
@@ -1486,20 +1958,17 @@ public class MainView extends javax.swing.JFrame {
     
     // Logic
     cta_button.changePanel(feature_panel, history_panel);
-    if (flag2 != true) {
-      history.displayData(table_riwayat);
-      flag2 = true;
-    }
+    Vehicle.clearTableContent(table_riwayat);
+    search_textfield.setText("No Polisi");
+    history.displayData(table_riwayat);
   }//GEN-LAST:event_cta_riwayatMouseClicked
 
   private void boldColoredFont(JLabel _text) {
     _font.boldingFont(_text);
-    //_font.changeColor(_text, new Color(71, 33, 131));
   }
   
   private void unboldUncoloredFont(JLabel _text) {
     _font.unboldFont(_text);
-    //_font.changeColor(_text, Color.white);
   }
   
   private void cta_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_berandaMouseReleased
@@ -1534,51 +2003,61 @@ public class MainView extends javax.swing.JFrame {
     cta_button.changeColor(cta_button_next, new Color(75,86,210));
   }//GEN-LAST:event_cta_button_nextMouseClicked
 
-  private void cta_button_validateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseEntered
-    cta_button.changeColor(cta_button_validate, new Color(71, 33, 131));
-  }//GEN-LAST:event_cta_button_validateMouseEntered
-
-  private void cta_button_validateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseExited
-    cta_button.changeColor(cta_button_validate, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_validateMouseExited
-
-  private void cta_button_validateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMousePressed
-    cta_button.changeColor(cta_button_validate, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_validateMousePressed
-
-  private void cta_button_validateMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseReleased
-    cta_button.changeColor(cta_button_validate, new Color(71, 33, 131));
-  }//GEN-LAST:event_cta_button_validateMouseReleased
-
-  private void cta_button_validateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validateMouseClicked
-    cta_button.changePanel(feature_panel, validated_panel);
-    cta_button.changeColor(cta_button_validate, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_validateMouseClicked
-
-  private void cta_button_return_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMouseClicked
-    cta_button.changePanel(feature_panel, beranda_panel);
-    cta_button.changeColor(cta_button_return_beranda, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_return_berandaMouseClicked
-
-  private void cta_button_return_berandaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMouseEntered
-    cta_button.changeColor(cta_button_return_beranda, new Color(71, 33, 131));
-  }//GEN-LAST:event_cta_button_return_berandaMouseEntered
-
-  private void cta_button_return_berandaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMouseExited
-    cta_button.changeColor(cta_button_return_beranda, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_return_berandaMouseExited
-
-  private void cta_button_return_berandaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMousePressed
-    cta_button.changeColor(cta_button_return_beranda, new Color(75, 86, 210));
-  }//GEN-LAST:event_cta_button_return_berandaMousePressed
-
-  private void cta_button_return_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_return_berandaMouseReleased
-    cta_button.changeColor(cta_button_return_beranda, new Color(71, 33, 131));
-  }//GEN-LAST:event_cta_button_return_berandaMouseReleased
-
   private void search_textfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_search_textfieldFocusGained
     search_textfield.setText("");
   }//GEN-LAST:event_search_textfieldFocusGained
+
+  private void cta_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cta_searchActionPerformed
+    String input = search_textfield.getText();
+    Vehicle.clearTableContent(table_riwayat);
+    
+    if (input.isEmpty() || input.equals("No Polisi")) {
+      history.displayData(table_riwayat);
+    }
+    else {
+      history.searchData(input, table_riwayat); 
+    }
+  }//GEN-LAST:event_cta_searchActionPerformed
+
+  private void cta_button_validate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseClicked
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_validate1MouseClicked
+
+  private void cta_button_validate1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseEntered
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_validate1MouseEntered
+
+  private void cta_button_validate1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseExited
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_validate1MouseExited
+
+  private void cta_button_validate1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MousePressed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_validate1MousePressed
+
+  private void cta_button_validate1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseReleased
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_validate1MouseReleased
+
+  private void cta_button_to_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseClicked
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_to_berandaMouseClicked
+
+  private void cta_button_to_berandaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseEntered
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_to_berandaMouseEntered
+
+  private void cta_button_to_berandaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseExited
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_to_berandaMouseExited
+
+  private void cta_button_to_berandaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMousePressed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_to_berandaMousePressed
+
+  private void cta_button_to_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseReleased
+    // TODO add your handling code here:
+  }//GEN-LAST:event_cta_button_to_berandaMouseReleased
 
   
   public static void main(String args[]) {
@@ -1617,52 +2096,68 @@ public class MainView extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JLabel beranda;
   private javax.swing.JPanel beranda_panel;
+  private javax.swing.JPanel bus_kosong_3;
+  private javax.swing.JPanel bus_kosong_5;
+  private javax.swing.JLabel bus_kosong_label2;
+  private javax.swing.JLabel bus_kosong_label4;
   private javax.swing.JRadioButton bus_radio;
+  private javax.swing.JPanel bus_terisi_3;
+  private javax.swing.JPanel bus_terisi_5;
+  private javax.swing.JLabel bus_terisi_label2;
+  private javax.swing.JLabel bus_terisi_label4;
   private javax.swing.JPanel cta_beranda;
   private javax.swing.JPanel cta_button_next;
-  private javax.swing.JPanel cta_button_return_beranda;
-  private javax.swing.JPanel cta_button_validate;
+  private javax.swing.JPanel cta_button_to_beranda;
+  private javax.swing.JPanel cta_button_validate1;
   private javax.swing.JPanel cta_daftar_kendaraan;
   private javax.swing.JLabel cta_next;
-  private javax.swing.JLabel cta_return_beranda;
   private javax.swing.JPanel cta_riwayat;
   private javax.swing.JButton cta_search;
   private javax.swing.JPanel cta_signout;
-  private javax.swing.JLabel cta_validate;
+  private javax.swing.JLabel cta_to_beranda;
+  private javax.swing.JLabel cta_validate1;
   private javax.swing.JLabel daftar_kendaraan;
   private javax.swing.JPanel daftar_kendaraan_panel;
   private javax.swing.JLabel daftar_kendaraan_title;
   private javax.swing.JPanel feature_panel;
   private javax.swing.JPanel history_panel;
   private javax.swing.JLabel home_icon;
-  private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
-  private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JScrollPane jScrollPane4;
+  private javax.swing.JScrollPane jScrollPane5;
+  private javax.swing.JScrollPane jScrollPane7;
   private javax.swing.JSeparator jSeparator1;
   private javax.swing.JSeparator jSeparator2;
   public static javax.swing.JTable jTable1;
-  private javax.swing.JLabel jumlah_kosong;
-  private javax.swing.JLabel jumlah_kosong2;
-  private javax.swing.JLabel jumlah_terisi;
-  private javax.swing.JLabel jumlah_terisi2;
   private javax.swing.JPanel keterangan;
-  private javax.swing.JPanel kosong_panel;
-  private javax.swing.JPanel kosong_panel2;
-  private javax.swing.JLabel kosong_title;
-  private javax.swing.JLabel kosong_title1;
-  private javax.swing.JPanel kosong_title_panel;
-  private javax.swing.JPanel kosong_title_panel2;
+  private javax.swing.JLabel label_pic1;
+  private javax.swing.JLabel label_pic2;
   private javax.swing.JLabel list_icon;
   private javax.swing.JPanel main_panel;
   private javax.swing.JRadioButton member_radio;
   private javax.swing.ButtonGroup membershipGroup;
+  private javax.swing.JPanel mobil_kosong_3;
+  private javax.swing.JPanel mobil_kosong_5;
+  private javax.swing.JLabel mobil_kosong_label2;
+  private javax.swing.JLabel mobil_kosong_label4;
   private javax.swing.JPanel mobil_panel;
   private javax.swing.JRadioButton mobil_radio;
+  private javax.swing.JPanel mobil_terisi_3;
+  private javax.swing.JPanel mobil_terisi_5;
+  private javax.swing.JLabel mobil_terisi_label2;
+  private javax.swing.JLabel mobil_terisi_label4;
   private javax.swing.JLabel mobil_title;
   private javax.swing.JPanel mobil_title_panel;
+  private javax.swing.JPanel motor_kosong_3;
+  private javax.swing.JPanel motor_kosong_5;
+  private javax.swing.JLabel motor_kosong_label2;
+  private javax.swing.JLabel motor_kosong_label4;
   private javax.swing.JPanel motor_panel;
   private javax.swing.JRadioButton motor_radio;
+  private javax.swing.JPanel motor_terisi_3;
+  private javax.swing.JPanel motor_terisi_5;
+  private javax.swing.JLabel motor_terisi_label2;
+  private javax.swing.JLabel motor_terisi_label4;
   private javax.swing.JLabel motor_title;
   private javax.swing.JPanel motor_title_panel;
   private javax.swing.JRadioButton nonmember_radio;
@@ -1673,6 +2168,16 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel others_panel;
   private javax.swing.JLabel others_title;
   private javax.swing.JPanel others_title_panel;
+  private javax.swing.JPanel panel_count3;
+  private javax.swing.JPanel panel_count5;
+  private javax.swing.JPanel panel_count_title_3;
+  private javax.swing.JPanel panel_count_title_5;
+  private javax.swing.JPanel panel_kosong_3;
+  private javax.swing.JPanel panel_kosong_5;
+  private javax.swing.JPanel panel_number2;
+  private javax.swing.JPanel panel_number4;
+  private javax.swing.JPanel panel_terisi_3;
+  private javax.swing.JPanel panel_terisi_5;
   private javax.swing.JPanel payment_panel;
   private javax.swing.JPanel pic_1;
   private javax.swing.JPanel pic_2;
@@ -1690,23 +2195,37 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JPanel table_riwayat_panel;
   private javax.swing.JLabel table_riwayat_title;
   private javax.swing.JPanel table_riwayat_title_panel;
-  private javax.swing.JTable table_status_payment1;
+  private javax.swing.JTable table_status_payment2;
   private javax.swing.JTable table_status_payment3;
   private javax.swing.JPanel table_title_panel;
-  private javax.swing.JPanel terisi_panel;
-  private javax.swing.JPanel terisi_panel2;
-  private javax.swing.JPanel terisi_title_panel;
-  private javax.swing.JPanel terisi_title_panel2;
-  private javax.swing.JLabel terisit_title;
-  private javax.swing.JLabel terisit_title2;
   private javax.swing.JPanel tipe_panel;
   private javax.swing.JLabel tipe_title;
   private javax.swing.JLabel title;
+  private javax.swing.JLabel title_bus2;
+  private javax.swing.JLabel title_bus4;
+  private javax.swing.JLabel title_kosong_3;
+  private javax.swing.JLabel title_kosong_5;
+  private javax.swing.JLabel title_mobil2;
+  private javax.swing.JLabel title_mobil4;
+  private javax.swing.JLabel title_motor2;
+  private javax.swing.JLabel title_motor4;
+  private javax.swing.JLabel title_terisi_3;
+  private javax.swing.JLabel title_terisi_5;
+  private javax.swing.JLabel title_truk_3;
+  private javax.swing.JLabel title_truk_5;
   private javax.swing.JLabel total_lainnya_parkir;
   private javax.swing.JLabel total_mobil_parkir;
   private javax.swing.JLabel total_motor_parkir;
   private javax.swing.JLabel total_title;
+  private javax.swing.JPanel truk_kosong_3;
+  private javax.swing.JPanel truk_kosong_5;
+  private javax.swing.JLabel truk_kosong_label2;
+  private javax.swing.JLabel truk_kosong_label4;
   private javax.swing.JRadioButton truk_radio;
+  private javax.swing.JPanel truk_terisi_3;
+  private javax.swing.JPanel truk_terisi_5;
+  private javax.swing.JLabel truk_terisi_label2;
+  private javax.swing.JLabel truk_terisi_label4;
   private javax.swing.ButtonGroup typeGroup;
   private javax.swing.JLabel user_pic;
   private javax.swing.JPanel validated_panel;

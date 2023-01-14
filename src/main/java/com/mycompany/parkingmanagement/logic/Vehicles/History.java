@@ -14,6 +14,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
       db.st = db.connector.createStatement();
       
       super.sql = "SELECT \n" +
+        "tanggal as Tanggal_Parkir,\n" +
         "kendaraan.nopol as No_Polisi,\n" +
         "tipe_kendaraan as Tipe,\n" +
         "merk as Merk,\n" +
@@ -30,6 +31,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
       db.rs = db.st.executeQuery(sql);
       
       while(db.rs.next()) {
+        setDate(String.valueOf(db.rs.getDate("Tanggal_Parkir")));
         setLicensePlate(db.rs.getString("No_Polisi"));
         setVehicleType(db.rs.getString("Tipe"));
         setVehicleBrand(db.rs.getString("Merk"));
@@ -37,6 +39,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
         setTimeExit(String.valueOf(db.rs.getTime("Jam_Keluar")));
         
         String tbData[] = {
+          super.date,
           super.license_plate,
           super.vehicle_type,
           super.vehicle_brand,
@@ -59,6 +62,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
       db.st = db.connector.createStatement();
       
       super.sql = "SELECT \n" +
+        "tanggal as Tanggal_Parkir,\n" +
         "kendaraan.nopol as No_Polisi,\n" +
         "tipe_kendaraan as Tipe,\n" +
         "merk as Merk,\n" +
@@ -75,6 +79,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
       
       db.rs = db.st.executeQuery(super.sql);
       while(db.rs.next()) {
+        setDate(String.valueOf(db.rs.getDate("Tanggal_Parkir")));
         setLicensePlate(db.rs.getString("No_Polisi"));
         setVehicleType(db.rs.getString("Tipe"));
         setVehicleBrand(db.rs.getString("Merk"));
@@ -82,6 +87,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
         setTimeExit(String.valueOf(db.rs.getTime("Jam_Keluar")));
         
         String tbData[] = {
+          super.date,
           super.license_plate,
           super.vehicle_type,
           super.vehicle_brand,
