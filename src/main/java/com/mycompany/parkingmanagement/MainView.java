@@ -2020,43 +2020,45 @@ public class MainView extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_searchActionPerformed
 
   private void cta_button_validate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseClicked
-    // TODO add your handling code here:
+    cta_button.changePanel(feature_panel, validated_panel);
+    cta_button.changeColor(cta_button_validate1, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_validate1MouseClicked
 
   private void cta_button_validate1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseEntered
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_validate1, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_validate1MouseEntered
 
   private void cta_button_validate1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseExited
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_validate1, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_validate1MouseExited
 
   private void cta_button_validate1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MousePressed
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_validate1, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_validate1MousePressed
 
   private void cta_button_validate1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseReleased
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_validate1, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_validate1MouseReleased
 
   private void cta_button_to_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseClicked
-    // TODO add your handling code here:
+    cta_button.changePanel(feature_panel, beranda_panel);
+    cta_button.changeColor(cta_button_to_beranda, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_to_berandaMouseClicked
 
   private void cta_button_to_berandaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseEntered
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_to_beranda, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_to_berandaMouseEntered
 
   private void cta_button_to_berandaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseExited
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_to_beranda, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_to_berandaMouseExited
 
   private void cta_button_to_berandaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMousePressed
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_to_beranda, new Color(75, 86, 210));
   }//GEN-LAST:event_cta_button_to_berandaMousePressed
 
   private void cta_button_to_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseReleased
-    // TODO add your handling code here:
+    cta_button.changeColor(cta_button_to_beranda, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_to_berandaMouseReleased
 
   
