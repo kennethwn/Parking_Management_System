@@ -31,7 +31,7 @@ SELECT
     tipe_kendaraan as Tipe,
     status_member as Status_Member,
     metode_pembayaran as Metode,
-    concat("Rp",tarif) as Tarif,
+    concat('Rp',tarif) as Tarif,
     keterangan as Status_Payment
 FROM kendaraan_payment
 inner join kendaraan on kendaraan_payment.nopol = kendaraan.nopol

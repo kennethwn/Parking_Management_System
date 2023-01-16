@@ -61,10 +61,10 @@ insert into membership value
     ('0', 'Nonmember');
 
 insert into kendaraan value
-	('D l645 UCO', '2022-12-10', '1', 'TYPE2', 'Honda', "10:00:00", null),
+	('D l645 UCO', '2022-12-10', '0', 'TYPE2', 'Honda', "10:00:00", null),
     ('E 1992 ICA', '2022-12-10', '0', 'TYPE1', 'Avanza', "11:50:00", "13:00:00"),
-    ('D 5512 ABD', '2022-12-10', '1', 'TYPE1', 'Avanza', "10:45:00", null),
-    ('E 2231 POW', '2022-12-10', '1', 'TYPE2', 'Mio', "10:00:00", null),
+    ('D 5512 ABD', '2022-12-10', '0', 'TYPE1', 'Avanza', "10:45:00", null),
+    ('E 2231 POW', '2022-12-10', '0', 'TYPE2', 'Mio', "10:00:00", null),
     ('E 5192 AZZ', '2022-12-10', '0', 'TYPE2', 'BMW', "07:00:00", "12:00:00"),
     ('F 1945 OF', '2022-12-10', '0', 'TYPE3', 'Mitsubishi', "08:00:00", null),
     ('B 0706 BCL', '2022-12-10', '0', 'TYPE4', 'Mercedes Benz', "06:00:00", null);
