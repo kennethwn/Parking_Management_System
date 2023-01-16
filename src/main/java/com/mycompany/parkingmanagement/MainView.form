@@ -347,6 +347,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cta_signoutMouseClicked"/>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cta_signoutMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cta_signoutMouseExited"/>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cta_signoutMousePressed"/>
@@ -793,7 +794,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cta_next" alignment="1" max="32767" attributes="0"/>
+                              <Component id="cta_next" alignment="0" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1625,13 +1626,13 @@
                           </Border>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="4">
+                          <Table columnCount="7" rowCount="0">
                             <Column editable="false" title="Tanggal Parkir" type="java.lang.String"/>
                             <Column editable="false" title="Nomor Polisi" type="java.lang.String"/>
                             <Column editable="false" title="Tipe " type="java.lang.String"/>
                             <Column editable="false" title="Status" type="java.lang.String"/>
                             <Column editable="false" title="Metode" type="java.lang.String"/>
-                            <Column editable="false" title="Tarif" type="java.lang.Integer"/>
+                            <Column editable="false" title="Tarif" type="java.lang.String"/>
                             <Column editable="false" title="Status Pembayaran" type="java.lang.String"/>
                           </Table>
                         </Property>
@@ -1997,7 +1998,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2073,7 +2074,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2149,7 +2150,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2225,7 +2226,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2337,13 +2338,13 @@
                           </Border>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="7" rowCount="4">
+                          <Table columnCount="7" rowCount="0">
                             <Column editable="false" title="Tanggal Parkir" type="java.lang.String"/>
                             <Column editable="false" title="Nomor Polisi" type="java.lang.String"/>
                             <Column editable="false" title="Tipe " type="java.lang.String"/>
                             <Column editable="false" title="Status" type="java.lang.String"/>
                             <Column editable="false" title="Metode" type="java.lang.String"/>
-                            <Column editable="false" title="Tarif" type="java.lang.Integer"/>
+                            <Column editable="false" title="Tarif" type="java.lang.String"/>
                             <Column editable="false" title="Status Pembayaran" type="java.lang.String"/>
                           </Table>
                         </Property>
@@ -2709,7 +2710,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2785,7 +2786,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2861,7 +2862,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
@@ -2937,7 +2938,7 @@
                                   <Font name="sansserif" size="48" style="1"/>
                                 </Property>
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                               </Properties>
