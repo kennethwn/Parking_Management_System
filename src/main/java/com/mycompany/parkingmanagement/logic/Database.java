@@ -31,18 +31,4 @@ public class Database {
     }
     return connect;
   }
-  
-  // Regular Statement
-  public static Connection getConnection2() {
-    if(connect == null) {
-      try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connect = DriverManager.getConnection(url,user,pw);
-      }
-      catch(Exception e) {
-        System.out.println(e.getMessage());
-      }
-    }
-    return connect;
-  }
 }
