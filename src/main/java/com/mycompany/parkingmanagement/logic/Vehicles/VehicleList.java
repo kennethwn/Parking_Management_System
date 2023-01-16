@@ -12,7 +12,7 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
   @Override
   public void displayData(JTable table) {
    try {
-      db.connector = Database.getConnection2();
+      db.connector = Database.getConnection();
       db.st = db.connector.createStatement();
       
       super.sql = "SELECT \n" +
@@ -57,10 +57,10 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
   
   public int getTotalVehicle() {
     try {
-      db.connector = Database.getConnection2();
+      db.connector = Database.getConnection();
       db.st = db.connector.createStatement();
       
-      this.sql = "SELECT\n" +
+      super.sql = "SELECT\n" +
         "COUNT(kendaraan.nopol) as kendaraan_parkir\n" +
         "FROM kendaraan_payment\n" +
         "inner join kendaraan on kendaraan_payment.nopol = kendaraan.nopol\n" +
@@ -69,7 +69,7 @@ public class VehicleList extends com.mycompany.parkingmanagement.logic.Vehicle {
         "where tipe_kendaraan in ('Mobil','Motor', 'Truk','Bus') \n" +
         "AND (jam_keluar is null AND status_payment.id_status_payment = 'BL');";
       
-      db.rs = db.st.executeQuery(this.sql);
+      db.rs = db.st.executeQuery(super.sql);
       if (db.rs.next()) {this.count = db.rs.getInt("kendaraan_parkir");}
     }
     catch (Exception e) {
