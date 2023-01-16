@@ -6,17 +6,25 @@ import com.mycompany.parkingmanagement.logic.Vehicles.History;
 import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
 import java.awt.Color;
 import java.sql.SQLException;
+import java.util.Enumeration;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 
 public class MainView extends javax.swing.JFrame {
   private boolean flag = false;
+  
+  private String nopol;
    
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
   
-  private Dashboard dashboard = new Dashboard();
+  private Dashboard dashboard;
   private VehicleList vehicle_list = new VehicleList();
   private History history = new History();
 
@@ -319,6 +327,9 @@ public class MainView extends javax.swing.JFrame {
     cta_signout.setBackground(new java.awt.Color(75, 86, 210));
     cta_signout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     cta_signout.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        cta_signoutMouseClicked(evt);
+      }
       public void mouseEntered(java.awt.event.MouseEvent evt) {
         cta_signoutMouseEntered(evt);
       }
@@ -585,7 +596,7 @@ public class MainView extends javax.swing.JFrame {
     cta_button_next.setLayout(cta_button_nextLayout);
     cta_button_nextLayout.setHorizontalGroup(
       cta_button_nextLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addComponent(cta_next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+      .addComponent(cta_next, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
     );
     cta_button_nextLayout.setVerticalGroup(
       cta_button_nextLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1057,17 +1068,14 @@ public class MainView extends javax.swing.JFrame {
     table_status_payment2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     table_status_payment2.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null}
+
       },
       new String [] {
         "Tanggal Parkir", "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
         false, false, false, false, false, false, false
@@ -1217,7 +1225,7 @@ public class MainView extends javax.swing.JFrame {
     mobil_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     mobil_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    mobil_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_terisi_label2.setForeground(new java.awt.Color(255, 0, 0));
     mobil_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout mobil_terisi_3Layout = new javax.swing.GroupLayout(mobil_terisi_3);
@@ -1253,7 +1261,7 @@ public class MainView extends javax.swing.JFrame {
     motor_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     motor_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    motor_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    motor_terisi_label2.setForeground(new java.awt.Color(255, 0, 0));
     motor_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout motor_terisi_3Layout = new javax.swing.GroupLayout(motor_terisi_3);
@@ -1289,7 +1297,7 @@ public class MainView extends javax.swing.JFrame {
     truk_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     truk_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    truk_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    truk_terisi_label2.setForeground(new java.awt.Color(255, 0, 0));
     truk_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout truk_terisi_3Layout = new javax.swing.GroupLayout(truk_terisi_3);
@@ -1325,7 +1333,7 @@ public class MainView extends javax.swing.JFrame {
     bus_terisi_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     bus_terisi_label2.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    bus_terisi_label2.setForeground(new java.awt.Color(0, 0, 0));
+    bus_terisi_label2.setForeground(new java.awt.Color(255, 0, 0));
     bus_terisi_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout bus_terisi_3Layout = new javax.swing.GroupLayout(bus_terisi_3);
@@ -1454,17 +1462,14 @@ public class MainView extends javax.swing.JFrame {
     table_status_payment3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
     table_status_payment3.setModel(new javax.swing.table.DefaultTableModel(
       new Object [][] {
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null}
+
       },
       new String [] {
         "Tanggal Parkir", "Nomor Polisi", "Tipe ", "Status", "Metode", "Tarif", "Status Pembayaran"
       }
     ) {
       Class[] types = new Class [] {
-        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+        java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
       };
       boolean[] canEdit = new boolean [] {
         false, false, false, false, false, false, false
@@ -1614,7 +1619,7 @@ public class MainView extends javax.swing.JFrame {
     mobil_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     mobil_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    mobil_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    mobil_terisi_label4.setForeground(new java.awt.Color(255, 0, 0));
     mobil_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout mobil_terisi_5Layout = new javax.swing.GroupLayout(mobil_terisi_5);
@@ -1650,7 +1655,7 @@ public class MainView extends javax.swing.JFrame {
     motor_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     motor_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    motor_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    motor_terisi_label4.setForeground(new java.awt.Color(255, 0, 0));
     motor_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout motor_terisi_5Layout = new javax.swing.GroupLayout(motor_terisi_5);
@@ -1686,7 +1691,7 @@ public class MainView extends javax.swing.JFrame {
     truk_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     truk_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    truk_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    truk_terisi_label4.setForeground(new java.awt.Color(255, 0, 0));
     truk_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout truk_terisi_5Layout = new javax.swing.GroupLayout(truk_terisi_5);
@@ -1722,7 +1727,7 @@ public class MainView extends javax.swing.JFrame {
     bus_terisi_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
     bus_terisi_label4.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
-    bus_terisi_label4.setForeground(new java.awt.Color(0, 0, 0));
+    bus_terisi_label4.setForeground(new java.awt.Color(255, 0, 0));
     bus_terisi_label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
     javax.swing.GroupLayout bus_terisi_5Layout = new javax.swing.GroupLayout(bus_terisi_5);
@@ -1923,11 +1928,25 @@ public class MainView extends javax.swing.JFrame {
     cta_button.changeColor(cta_signout, new Color(71,33,131));
   }//GEN-LAST:event_cta_signoutMouseReleased
 
+  private void clearInputBeranda(
+    JTextField text, 
+    ButtonGroup button1, 
+    ButtonGroup button2
+  ) {
+    text.setText("x xxxx xx");
+    button1.clearSelection();
+    button2.clearSelection();
+  }
+  
   private void cta_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_berandaMouseClicked
-    cta_button.changePanel(feature_panel, beranda_panel);
+    // Style
     boldColoredFont(beranda);
     unboldUncoloredFont(daftar_kendaraan);
     unboldUncoloredFont(riwayat);
+    
+    // Logic
+    cta_button.changePanel(feature_panel, beranda_panel);
+    clearInputBeranda(nopol_input,typeGroup,membershipGroup);
   }//GEN-LAST:event_cta_berandaMouseClicked
 
   
@@ -1939,21 +1958,19 @@ public class MainView extends javax.swing.JFrame {
 
     // Logic
     cta_button.changePanel(feature_panel, daftar_kendaraan_panel);
+    Vehicle.clearTableContent(jTable1);
     
-    if (flag != true) {
-      int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
-      int motor_parkir = vehicle_list.getUnemptySlot("Motor");
-      int lainnya_parkir = vehicle_list.getUnemptySlot("Lainnya");
-      int total_vehicle = vehicle_list.getTotalVehicle();
+    int mobil_parkir = vehicle_list.getUnemptySlot("Mobil");
+    int motor_parkir = vehicle_list.getUnemptySlot("Motor");
+    int lainnya_parkir = vehicle_list.getUnemptySlot("Lainnya");
+    int total_vehicle = vehicle_list.getTotalVehicle();
 
-      total_mobil_parkir.setText(String.valueOf(mobil_parkir));
-      total_motor_parkir.setText(String.valueOf(motor_parkir));
-      total_lainnya_parkir.setText(String.valueOf(lainnya_parkir));
-      num_jumlah_kendaraan.setText(String.valueOf(total_vehicle));
-      
-      vehicle_list.displayData(jTable1);
-      flag = true;
-    }
+    total_mobil_parkir.setText(String.valueOf(mobil_parkir));
+    total_motor_parkir.setText(String.valueOf(motor_parkir));
+    total_lainnya_parkir.setText(String.valueOf(lainnya_parkir));
+    num_jumlah_kendaraan.setText(String.valueOf(total_vehicle));
+
+    vehicle_list.displayData(jTable1);
   }//GEN-LAST:event_cta_daftar_kendaraanMouseClicked
 
   private void cta_riwayatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_riwayatMouseClicked
@@ -2004,9 +2021,101 @@ public class MainView extends javax.swing.JFrame {
     cta_button.changeColor(cta_button_next, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_nextMouseReleased
 
+  private String getSelectedRadioButtonText(ButtonGroup buttonGroup) {
+    for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+      AbstractButton button = buttons.nextElement();
+
+      if (button.isSelected()) {
+        return button.getText();
+      }
+    }
+    return null;
+  }
+
+  private boolean stringMatching(String input, String pattern) {
+    if (input.matches(pattern)) return true;
+    else return false;
+  }
+  
+  private void setAllUnemptySlot(
+    JLabel label1,
+    JLabel label2,
+    JLabel label3,
+    JLabel label4
+  ) {
+    int mobil_terisi = dashboard.getUnemptySlot("Mobil");
+    int motor_terisi = dashboard.getUnemptySlot("Motor");
+    int truk_terisi = dashboard.getUnemptySlot("Truk");
+    int bus_terisi = dashboard.getUnemptySlot("Bus");
+    
+    label1.setText(String.valueOf(mobil_terisi));
+    label2.setText(String.valueOf(motor_terisi));
+    label3.setText(String.valueOf(truk_terisi));
+    label4.setText(String.valueOf(bus_terisi));
+  }
+  
+  private void setAllEmptySlot(
+    JLabel label1,
+    JLabel label2,
+    JLabel label3,
+    JLabel label4
+  ) {
+    int mobil_kosong = dashboard.getEmptySlot("Mobil",30);
+    int motor_kosong = dashboard.getEmptySlot("Motor",50);
+    int truk_kosong = dashboard.getEmptySlot("Truk",10);
+    int bus_kosong = dashboard.getEmptySlot("Bus",5);
+
+    label1.setText(String.valueOf(mobil_kosong));
+    label2.setText(String.valueOf(motor_kosong));
+    label3.setText(String.valueOf(truk_kosong));
+    label4.setText(String.valueOf(bus_kosong));
+  }
+  
   private void cta_button_nextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_nextMouseClicked
-    cta_button.changePanel(feature_panel, payment_panel);
+    // Style
     cta_button.changeColor(cta_button_next, new Color(75,86,210));
+    
+    // Logic
+    this.nopol = nopol_input.getText();
+    
+    if (
+      nonmember_radio.isSelected() &&
+      !this.nopol.isEmpty() &&
+      stringMatching(this.nopol,"[A-Z]{1}\\s[0-9]{4}\\s[A-Z]{2}") ||
+      stringMatching(this.nopol, "[A-Z]{1}\\s[0-9]{4}\\s[A-Z]{3}")
+    ) {
+      if (
+        mobil_radio.isSelected() ||
+        motor_radio.isSelected() ||
+        truk_radio.isSelected()  ||
+        bus_radio.isSelected()
+      ) {
+        cta_button.changePanel(feature_panel, payment_panel);
+        String selectedTypeText = getSelectedRadioButtonText(typeGroup);
+        String selectedMemberText = getSelectedRadioButtonText(membershipGroup);
+
+        dashboard = new Dashboard(
+          this.nopol,
+          selectedTypeText,
+          selectedMemberText
+        );
+        
+        Vehicle.clearTableContent(table_status_payment2);
+        dashboard.displaySingleData(table_status_payment2, this.nopol, 0);
+        
+        setAllUnemptySlot(mobil_terisi_label2,motor_terisi_label2,truk_terisi_label2,bus_terisi_label2);
+        setAllEmptySlot(mobil_kosong_label2,motor_kosong_label2,truk_kosong_label2,bus_kosong_label2);
+      }
+    }
+    else if (
+      !stringMatching(this.nopol,"[A-Z]{1}\\s[0-9]{4}\\s[A-Z]{2}") ||
+      !stringMatching(this.nopol, "[A-Z]{1}\\s[0-9]{4}\\s[A-Z]{3}")
+    ) {
+      JOptionPane.showMessageDialog(this,"License plate's format is wrong!");
+    }
+    else {
+      JOptionPane.showMessageDialog(this,"Please fill the form!");
+    }
   }//GEN-LAST:event_cta_button_nextMouseClicked
 
   private void search_textfieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_search_textfieldFocusGained
@@ -2026,8 +2135,27 @@ public class MainView extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_searchActionPerformed
 
   private void cta_button_validate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseClicked
+    // Style
     cta_button.changePanel(feature_panel, validated_panel);
     cta_button.changeColor(cta_button_validate1, new Color(75, 86, 210));
+    
+    // Logic
+    DefaultTableModel model = (DefaultTableModel) table_status_payment2.getModel();
+    
+    if (model.getRowCount() == 0) {
+      cta_button.changePanel(feature_panel, beranda_panel);
+      clearInputBeranda(nopol_input,typeGroup,membershipGroup);
+      JOptionPane.showMessageDialog(this,"Data not found!");
+    }
+    else {
+      this.nopol = nopol_input.getText();
+      dashboard.validatePayment(this.nopol);
+      setAllUnemptySlot(mobil_terisi_label4,motor_terisi_label4,truk_terisi_label4,bus_terisi_label4);
+      setAllEmptySlot(mobil_kosong_label4,motor_kosong_label4,truk_kosong_label4,bus_kosong_label4);
+
+      Vehicle.clearTableContent(table_status_payment3);
+      dashboard.displaySingleData(table_status_payment3, this.nopol, 1);
+    }
   }//GEN-LAST:event_cta_button_validate1MouseClicked
 
   private void cta_button_validate1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_validate1MouseEntered
@@ -2047,8 +2175,12 @@ public class MainView extends javax.swing.JFrame {
   }//GEN-LAST:event_cta_button_validate1MouseReleased
 
   private void cta_button_to_berandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseClicked
+    // Style
     cta_button.changePanel(feature_panel, beranda_panel);
     cta_button.changeColor(cta_button_to_beranda, new Color(75, 86, 210));
+    
+    // Logic
+    clearInputBeranda(nopol_input,typeGroup,membershipGroup);
   }//GEN-LAST:event_cta_button_to_berandaMouseClicked
 
   private void cta_button_to_berandaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseEntered
@@ -2066,6 +2198,12 @@ public class MainView extends javax.swing.JFrame {
   private void cta_button_to_berandaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_button_to_berandaMouseReleased
     cta_button.changeColor(cta_button_to_beranda, new Color(71, 33, 131));
   }//GEN-LAST:event_cta_button_to_berandaMouseReleased
+
+  private void cta_signoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cta_signoutMouseClicked
+    dispose();
+    LoginForm login = new LoginForm();
+    login.show();
+  }//GEN-LAST:event_cta_signoutMouseClicked
 
   
   public static void main(String args[]) {
