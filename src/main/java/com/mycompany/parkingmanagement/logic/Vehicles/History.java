@@ -10,7 +10,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
   @Override
   public void displayData(JTable table) {
     try {
-      db.connector = Database.getConnection2();
+      db.connector = Database.getConnection();
       db.st = db.connector.createStatement();
       
       super.sql = "SELECT \n" +
@@ -58,8 +58,7 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
 
   public void searchData(String license_plate, JTable table) {
     try {
-      db.connector = Database.getConnection2();
-      db.st = db.connector.createStatement();
+      db.connector = Database.getConnection();
       
       super.sql = "SELECT \n" +
         "tanggal as Tanggal_Parkir,\n" +
@@ -74,10 +73,13 @@ public class History extends com.mycompany.parkingmanagement.logic.Vehicle {
         "inner join jenis_kendaraan on kendaraan.id_jenis_kendaraan = jenis_kendaraan.id_jenis_kendaraan\n" +
         "inner join payment on kendaraan_payment.id_payment = payment.id_payment\n" +
         "inner join status_payment on kendaraan_payment.id_status_payment = status_payment.id_status_payment\n" +
-        "where kendaraan.nopol = '"+license_plate+"'\n" +
+        "where kendaraan.nopol = ?\n" +
         "AND jam_keluar is not null AND status_payment.id_status_payment = 'L';";
       
-      db.rs = db.st.executeQuery(super.sql);
+      db.preparedStatement = db.connector.prepareStatement(super.sql);
+      db.preparedStatement.setString(1, license_plate);
+      db.rs = db.preparedStatement.executeQuery();
+      
       while(db.rs.next()) {
         setDate(String.valueOf(db.rs.getDate("Tanggal_Parkir")));
         setLicensePlate(db.rs.getString("No_Polisi"));
