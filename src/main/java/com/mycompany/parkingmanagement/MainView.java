@@ -5,13 +5,11 @@ import com.mycompany.parkingmanagement.logic.Vehicles.Dashboard;
 import com.mycompany.parkingmanagement.logic.Vehicles.History;
 import com.mycompany.parkingmanagement.logic.Vehicles.VehicleList;
 import java.awt.Color;
-import java.sql.SQLException;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +18,8 @@ public class MainView extends javax.swing.JFrame {
   private boolean flag = false;
   
   private String nopol;
+  private String selectedTypeText;
+  private String selectedMemberText;
    
   private StyleGuide cta_button = new StyleGuide();
   private StyleGuide _font = new StyleGuide();
@@ -2091,8 +2091,8 @@ public class MainView extends javax.swing.JFrame {
         bus_radio.isSelected()
       ) {
         cta_button.changePanel(feature_panel, payment_panel);
-        String selectedTypeText = getSelectedRadioButtonText(typeGroup);
-        String selectedMemberText = getSelectedRadioButtonText(membershipGroup);
+        this.selectedTypeText = getSelectedRadioButtonText(typeGroup);
+        this.selectedMemberText = getSelectedRadioButtonText(membershipGroup);
 
         dashboard = new Dashboard(
           this.nopol,
@@ -2101,7 +2101,7 @@ public class MainView extends javax.swing.JFrame {
         );
         
         Vehicle.clearTableContent(table_status_payment2);
-        dashboard.displaySingleData(table_status_payment2, this.nopol, 0);
+        dashboard.displaySingleData(table_status_payment2, this.nopol, this.selectedTypeText, this.selectedMemberText, 0);
         
         setAllUnemptySlot(mobil_terisi_label2,motor_terisi_label2,truk_terisi_label2,bus_terisi_label2);
         setAllEmptySlot(mobil_kosong_label2,motor_kosong_label2,truk_kosong_label2,bus_kosong_label2);
@@ -2154,7 +2154,7 @@ public class MainView extends javax.swing.JFrame {
       setAllEmptySlot(mobil_kosong_label4,motor_kosong_label4,truk_kosong_label4,bus_kosong_label4);
 
       Vehicle.clearTableContent(table_status_payment3);
-      dashboard.displaySingleData(table_status_payment3, this.nopol, 1);
+      dashboard.displaySingleData(table_status_payment3, this.nopol, this.selectedTypeText, this.selectedMemberText, 1);
     }
   }//GEN-LAST:event_cta_button_validate1MouseClicked
 
