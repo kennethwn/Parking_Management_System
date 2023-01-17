@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class Database {
   private static Connection connect;
   
-  private static String url = "jdbc:mysql://localhost:3306/parkir_system";
+  private static String url = "jdbc:mysql://localhost:3306/parking_system";
   private static String user = "root";
   private static String pw = "";
   
