@@ -64,7 +64,13 @@ public class Dashboard extends com.mycompany.parkingmanagement.logic.Vehicle {
     }
   }
   
-  public void displaySingleData(JTable table, String license_plate, int type) {
+  public void displaySingleData(
+    JTable table, 
+    String license_plate, 
+    String vehicle_type, 
+    String membership, 
+    int type
+  ) {
     try {
       db.connector = Database.getConnection();
       
@@ -83,7 +89,7 @@ public class Dashboard extends com.mycompany.parkingmanagement.logic.Vehicle {
           "inner join jenis_kendaraan on kendaraan.id_jenis_kendaraan = jenis_kendaraan.id_jenis_kendaraan\n" +
           "inner join payment on kendaraan_payment.id_payment = payment.id_payment\n" +
           "inner join status_payment on kendaraan_payment.id_status_payment = status_payment.id_status_payment\n" +
-          "where kendaraan.nopol = ?\n" + 
+          "where kendaraan.nopol = ? and tipe_kendaraan = ? and status_member = ?\n" + 
           "and (jam_keluar is null AND status_payment.id_status_payment = 'BL')";
       }
       else if (type == 1) {
@@ -101,12 +107,14 @@ public class Dashboard extends com.mycompany.parkingmanagement.logic.Vehicle {
           "inner join jenis_kendaraan on kendaraan.id_jenis_kendaraan = jenis_kendaraan.id_jenis_kendaraan\n" +
           "inner join payment on kendaraan_payment.id_payment = payment.id_payment\n" +
           "inner join status_payment on kendaraan_payment.id_status_payment = status_payment.id_status_payment\n" +
-          "where kendaraan.nopol = ?\n" +
+          "where kendaraan.nopol = ? and tipe_kendaraan = ? and status_member = ?\n" +
           "and (jam_keluar is not null AND status_payment.id_status_payment = 'L')";
       }
       
       db.preparedStatement = db.connector.prepareStatement(super.sql);
       db.preparedStatement.setString(1, license_plate);
+      db.preparedStatement.setString(2, vehicle_type);
+      db.preparedStatement.setString(3, membership);
       db.rs = db.preparedStatement.executeQuery();
       
       while(db.rs.next()) {
