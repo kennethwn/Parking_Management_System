@@ -24,25 +24,43 @@ public abstract class Vehicle {
   
   // Methods
   protected String getDate() {return this.date;}
+  
   protected String getLicensePlate() {return this.license_plate;}
+  
   protected String getVehicleType() {return this.vehicle_type;}
+  
   protected String getVehicleBrand() {return this.vehicle_brand;}
+  
   protected String getMembership() {return this.membership;}
+  
   protected String getPrice() {return this.price;}
+  
   protected String getPaymentMethod() {return this.payment_method;}
+  
   protected String getPaymentStatus() {return this.payment_status;}
+  
   protected String getTimeEntry() {return this.time_entry;}
+  
   protected String getTimeExit() {return this.time_exit;}
   
   protected void setDate(String date) {this.date = date;}
+  
   protected void setLicensePlate(String license_plate) {this.license_plate = license_plate;}
+  
   protected void setVehicleType(String vehicle_type) {this.vehicle_type = vehicle_type;}
+  
   protected void setVehicleBrand(String vehicle_brand) {this.vehicle_brand = vehicle_brand;}
+  
   protected void setMembership(String membership) {this.membership = membership;}
+  
   protected void setPrice(String price) {this.price = price;}
+  
   protected void setPaymentMethod(String payment_method) {this.payment_method = payment_method;}
+  
   protected void setPaymentStatus(String payment_status) {this.payment_status = payment_status;}
+  
   protected void setTimeEntry(String time_entry) {this.time_entry = time_entry;}
+  
   protected void setTimeExit(String time_exit) {this.time_exit = time_exit;}
   
   protected abstract void displayData(JTable table);
